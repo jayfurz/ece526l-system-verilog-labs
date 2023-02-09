@@ -44,11 +44,78 @@ gui_state_default_create -off
 gui_open_db -file /home/users3/jaf39908/ece_526l/lab2/vcdplus.vpd -design V1
 gui_list_expand -id  Hier.1   Lab2_1_tb
 gui_list_select -id Hier.1 -current_item_name Lab2_1_tb.UUT -current_item_type Scope  -selected  { Lab2_1_tb.UUT   }
-gui_list_action -id  Hier.1 Lab2_1_tb.UUT
-gui_list_select -id Data.1 -selected  { Lab2_1_tb.UUT.NT   }
+gui_list_select -id Data.1 -selected  { Lab2_1_tb.UUT.out1   }
 gui_list_select -id Data.1 -selected  { Lab2_1_tb.UUT.NT  Lab2_1_tb.UUT.A1  Lab2_1_tb.UUT.A2  Lab2_1_tb.UUT.O1  Lab2_1_tb.UUT.in1  Lab2_1_tb.UUT.in2  Lab2_1_tb.UUT.out1   }
 gui_open_window Wave
 gui_list_add -id Wave.1 -from Data.1 { Lab2_1_tb.UUT.NT Lab2_1_tb.UUT.A1 Lab2_1_tb.UUT.A2 Lab2_1_tb.UUT.O1 Lab2_1_tb.UUT.in1 Lab2_1_tb.UUT.in2 Lab2_1_tb.UUT.out1 } -insertionbar
+gui_wv_zoom_timerange -id  Wave.1 0 317
+gui_wv_zoom_timerange -id  Wave.1 0 333
 gui_zoom -window Wave.1 -full
-gui_wv_zoom_timerange -id  Wave.1 0 1693
+gui_marker_move -id  Wave.1 C1 600
+gui_marker_select -id  Wave.1 { C1 }
+gui_marker_move -id  Wave.1 C1 651
+gui_wv_zoom_timerange -id  Wave.1 633 645
 gui_zoom -window Wave.1 -full
+gui_scroll -window Wave.1 -hrel -.2
+gui_marker_move -id  Wave.1 C1 600
+gui_marker_move -id  Wave.1 C1 650
+gui_marker_move -id  Wave.1 C1 600
+gui_marker_move -id  Wave.1 C1 650
+gui_marker_move -id  Wave.1 C1 450
+gui_marker_move -id  Wave.1 C1 483
+gui_marker_move -id  Wave.1 C1 474
+gui_marker_move -id  Wave.1 C1 600
+gui_marker_move -id  Wave.1 C1 654
+gui_marker_move -id  Wave.1 C1 750
+gui_marker_move -id  Wave.1 C1 800
+gui_marker_move -id  Wave.1 C1 900
+gui_marker_move -id  Wave.1 C1 950
+gui_marker_move -id  Wave.1 C1 1050
+gui_marker_move -id  Wave.1 C1 1100
+gui_marker_move -id  Wave.1 C1 600
+gui_marker_move -id  Wave.1 C1 654
+gui_marker_move -id  Wave.1 C1 600
+gui_marker_move -id  Wave.1 C1 650
+gui_marker_move -id  Wave.1 C1 600
+gui_marker_move -id  Wave.1 C1 650
+gui_seek_next -id Wave.1 -number 1 
+gui_seek_next -id Wave.1 -number 1 
+gui_list_select -id Wave.1 -selected  { Lab2_1_tb.UUT.O1   }
+gui_seek_next -id Wave.1 -number 1 
+gui_seek_next -id Wave.1 -number 1 
+gui_seek_previous -id Wave.1 -number 1 
+gui_seek_previous -id Wave.1 -number 1 
+gui_marker_create -id  Wave.1 M1 600
+gui_marker_unselect -id  Wave.1 { C1 }
+gui_marker_select -id  Wave.1 { M1 }
+gui_marker_move -id  Wave.1 M1 699
+gui_marker_unselect -id  Wave.1 { M1 }
+gui_marker_select -id  Wave.1 { C1 }
+gui_marker_move -id  Wave.1 C1 615
+gui_list_select -id Wave.1 -selected  { Lab2_1_tb.UUT.out1   }
+gui_list_select -id Wave.1 -selected  { Lab2_1_tb.UUT.in2   }
+gui_marker_move -id  Wave.1 C1 604
+gui_seek_previous -id Wave.1 -number 1 
+gui_marker_unselect -id  Wave.1 { C1 }
+gui_marker_select -id  Wave.1 { M1 }
+gui_marker_move -id  Wave.1 C1 702
+gui_marker_move -id  Wave.1 M1 600
+gui_marker_move -id  Wave.1 C1 750
+gui_marker_move -id  Wave.1 C1 760
+gui_seek_previous -id Wave.1 -number 1 
+gui_marker_unselect -id  Wave.1 { M1 }
+gui_marker_select -id  Wave.1 { C1 }
+gui_marker_move -id  Wave.1 C1 606
+gui_seek_previous -id Wave.1 -number 1 
+gui_marker_goto -id Wave.1 M1
+gui_list_select -id Wave.1 -selected  { Lab2_1_tb.UUT.O1   }
+gui_seek_next -id Wave.1 -number 1 
+gui_seek_previous -id Wave.1 -number 1 
+gui_seek_next -id Wave.1 -number 1 
+gui_list_select -id Wave.1 -selected  { Lab2_1_tb.UUT.in2   }
+gui_seek_previous -id Wave.1 -number 1 
+gui_marker_goto -id Wave.1 M1
+gui_list_select -id Wave.1 -selected  { Lab2_1_tb.UUT.O1   }
+gui_seek_next -id Wave.1 -number 1 
+gui_marker_set_ref -id Wave.1 M1
+gui_close_window -window TopLevel.2
