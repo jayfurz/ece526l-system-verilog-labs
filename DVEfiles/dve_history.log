@@ -1,0 +1,36 @@
+# Preference setting overrides
+gui_create_pref_key -category {Globals} -key {load_detail_for_funcov} -value_type {bool} -value {false}
+
+# State setting overrides
+gui_state_default_create -off -ini
+gui_set_state_value -category Globals -key recent_databases -value {{gui_open_db -file /home/users3/jaf39908/ece_526l/vcdplus.vpd -design V1}}
+gui_create_state_key -category FindDialog -key m_pMatchCase -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pMatchWord -value_type bool -value false
+gui_create_state_key -category FindDialog -key m_pUseCombo -value_type string -value {}
+gui_create_state_key -category FindDialog -key m_pWrapAround -value_type bool -value true
+gui_state_default_create -off
+
+# Begin command logging
+gui_open_db -file /home/users3/jaf39908/ece_526l/vcdplus.vpd -design V1
+gui_list_select -id Data.1 -selected  { mux4_1_tb.A   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.A  mux4_1_tb.B   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.A  mux4_1_tb.B  mux4_1_tb.C   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.A  mux4_1_tb.B  mux4_1_tb.C  mux4_1_tb.D   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.A  mux4_1_tb.B  mux4_1_tb.C  mux4_1_tb.D  mux4_1_tb.SEL0   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.A  mux4_1_tb.B  mux4_1_tb.C  mux4_1_tb.D  mux4_1_tb.SEL0  mux4_1_tb.SEL1   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.A  mux4_1_tb.B  mux4_1_tb.C  mux4_1_tb.D  mux4_1_tb.SEL0  mux4_1_tb.SEL1  mux4_1_tb.OUT   }
+gui_open_window Wave
+gui_list_add -id Wave.1 -from Data.1 { mux4_1_tb.A mux4_1_tb.B mux4_1_tb.C mux4_1_tb.D mux4_1_tb.SEL0 mux4_1_tb.SEL1 mux4_1_tb.OUT } -insertionbar
+gui_wv_zoom_timerange -id  Wave.1 0 191
+gui_wv_zoom_timerange -id  Wave.1 0 193
+gui_list_expand -id  Hier.1   mux4_1_tb
+gui_list_select -id Hier.1 -current_item_name mux4_1_tb.UUT -current_item_type Scope  -selected  { mux4_1_tb.UUT   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.UUT.out   }
+gui_list_select -id Data.1 { mux4_1_tb.UUT.a  mux4_1_tb.UUT.b  mux4_1_tb.UUT.c  mux4_1_tb.UUT.d  mux4_1_tb.UUT.s0  mux4_1_tb.UUT.s1  mux4_1_tb.UUT.s0_n  mux4_1_tb.UUT.s1_n  mux4_1_tb.UUT.T1  mux4_1_tb.UUT.T2   }
+gui_list_select -id Data.1 { mux4_1_tb.UUT.T3  mux4_1_tb.UUT.T4   }
+gui_list_select -id Data.1 -selected  { mux4_1_tb.UUT.out   }
+gui_list_select -id Data.1 { mux4_1_tb.UUT.a  mux4_1_tb.UUT.b  mux4_1_tb.UUT.c  mux4_1_tb.UUT.d  mux4_1_tb.UUT.s0  mux4_1_tb.UUT.s1  mux4_1_tb.UUT.s0_n  mux4_1_tb.UUT.s1_n  mux4_1_tb.UUT.T1  mux4_1_tb.UUT.T2  mux4_1_tb.UUT.T3  mux4_1_tb.UUT.T4   }
+gui_open_window Wave
+gui_list_add -id Wave.2 -from Data.1 { mux4_1_tb.UUT.out mux4_1_tb.UUT.a mux4_1_tb.UUT.b mux4_1_tb.UUT.c mux4_1_tb.UUT.d mux4_1_tb.UUT.s0 mux4_1_tb.UUT.s1 mux4_1_tb.UUT.s0_n mux4_1_tb.UUT.s1_n mux4_1_tb.UUT.T1 mux4_1_tb.UUT.T2 mux4_1_tb.UUT.T3 mux4_1_tb.UUT.T4 } -insertionbar
+gui_wv_scroll_vslidermove -id  Wave.2 138
+gui_wv_zoom_timerange -id  Wave.2 0 294

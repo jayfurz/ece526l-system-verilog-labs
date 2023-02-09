@@ -1,0 +1,116 @@
+{
+    "Modules": {
+        "...MASTER...": {
+            "start_perf": [
+                0.34008407592773438,
+                0.049887000000000001,
+                0.052055999999999998,
+                208696,
+                222628,
+                1675315534.5116701,
+                14683813484142
+            ],
+            "child_modules": {
+                "mux4_1_tb": 1
+            },
+            "end_perf": [
+                0.3833010196685791,
+                0.052212000000000001,
+                0.059671000000000002,
+                211424,
+                222628,
+                14683964968894,
+                0,
+                0
+            ],
+            "nRouts": 5,
+            "nQuads": 0,
+            "nMops": 0
+        },
+        "mux4_1_tb": {
+            "Compiled": "Yes",
+            "start_perf": [
+                0.38352298736572266,
+                0.052309000000000001,
+                0.059782000000000002,
+                211424,
+                222628,
+                1675315534.555109,
+                14683965731552
+            ],
+            "child_modules": {},
+            "Compiled Times": 1,
+            "end_perf": [
+                0.44718289375305176,
+                0.065789,
+                0.064711000000000005,
+                216520,
+                222628,
+                14684188942100,
+                12884901889,
+                0
+            ],
+            "nRouts": 49,
+            "nQuads": 339,
+            "nMops": 595
+        }
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "checksum": 0,
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "bytes": 7502,
+            "mode": 4,
+            "text": 402
+        },
+        "Fas5u_d": {
+            "checksum": 0,
+            "mod": "mux4_1_tb",
+            "out": "Fas5u_d.o",
+            "bytes": 18156,
+            "mode": 4,
+            "text": 5169,
+            "archive": "archive.1/_8387_archive_1.a"
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": [
+        {
+            "objects": [
+                [
+                    "Fas5u_d.o",
+                    18156
+                ],
+                [
+                    "amcQwB.o",
+                    99390
+                ]
+            ],
+            "archive": "archive.1/_8387_archive_1.a",
+            "size": 117546
+        }
+    ],
+    "stat": {
+        "ru_self_end": {
+            "ru_utime_sec": 0.074018,
+            "ru_maxrss_kb": 73952,
+            "ru_stime_sec": 0.067487000000000005,
+            "ru_minflt": 24863,
+            "ru_nivcsw": 34,
+            "ru_majflt": 5,
+            "ru_nvcsw": 291
+        },
+        "peak_mem_kb": 222628,
+        "cpu_cycles_end": 14684427969756,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.028053999999999999,
+            "ru_maxrss_kb": 22116,
+            "ru_stime_sec": 0.030283000000000001,
+            "ru_minflt": 6906,
+            "ru_nivcsw": 8,
+            "ru_majflt": 0,
+            "ru_nvcsw": 21
+        }
+    }
+}

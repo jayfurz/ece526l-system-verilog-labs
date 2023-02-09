@@ -1,0 +1,75 @@
+0 
+29
++cli+4
++itf+/opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/vcsdp.tab
++memcbk
++vcsd
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/opt/synopsys/vcs-mx/N-2017.12-SP2-9/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libvirsim.so /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/liberrorinf.so /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libsnpsmalloc.so /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/opt/synopsys/vcs-mx/N-2017.12-SP2-9/include
+-Xcbug=0x1
+-debug=3
+-full64
+-gen_obj
+-picarchive
+/opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/bin/vcs1
+mux4_1.v
+mux4_1_tb.v
+31
+XDG_SESSION_ID=3
+XDG_RUNTIME_DIR=/run/user/2137217774
+XDG_DATA_DIRS=/home/users3/jaf39908/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+VMR_MODE_FLAG=64
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_HOME=/opt/synopsys/vcs-mx/N-2017.12-SP2-9/
+VCS_DEPTH=0
+VCS_BASE=/opt/synopsys/vcs-mx/N-2017.12-SP2-9/
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+UNAME=/bin/uname
+TOOL_HOME=/opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64
+SYNOPSYS=/opt/synopsys
+STROOT=/opt/synopsys/icc/T-2022.03-SP2
+SSH_TTY=/dev/pts/0
+SSH_CONNECTION=10.40.47.28 52164 10.209.13.153 22
+SSH_CLIENT=10.40.47.28 52164 22
+SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
+SELINUX_USE_CURRENT_RANGE=
+SELINUX_ROLE_REQUESTED=
+SELINUX_LEVEL_REQUESTED=
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+OVA_UUM=0
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+HISTCONTROL=ignoredups
+CDS_LIC_FILE=/opt/cadence/licence/licence.dat
+CDSDOC_PROJECT=/opt/cadence/cdsdoc_list/
+A__z="*SHLVL
+0
+3
+1675311885 mux4_1_tb.v
+1675311838 mux4_1.v
+1553138458 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/vcsdp.tab
+5
+0 
+1553140356 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libvirsim.so
+1553139291 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/liberrorinf.so
+1553139229 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libsnpsmalloc.so
+1553139863 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libvfs.so
+1675311889 simv.daidir

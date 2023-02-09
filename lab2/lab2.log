@@ -1,0 +1,14 @@
+Command: /home/users3/jaf39908/ece_526l/lab2/./simv -l lab2.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Feb  8 20:46 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+                   0: in1 = x, in2 = x, | out = x
+                  15: in1 = 0, in2 = 0, | out = 1
+                  30: in1 = 0, in2 = 1, | out = 1
+$finish called from file "lab2_tb.v", line 20.
+$finish at simulation time                  450
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 45000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Wed Feb  8 20:46:40 2023

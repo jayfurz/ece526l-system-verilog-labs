@@ -1,0 +1,20 @@
+Command: /home/users3/jaf39908/ece_526l/./simv -l Lab1.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Feb  1 21:25 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+                   0 OUT= x A= 1 B = 1 C= 1 D= 1 SEL0= x SEL= x
+                  10 OUT= 0 A= 0 B = 1 C= 0 D= 1 SEL0= 0 SEL= 0
+                  30 OUT= 1 A= 0 B = 1 C= 0 D= 1 SEL0= 0 SEL= 1
+                  50 OUT= 0 A= 0 B = 1 C= 0 D= 1 SEL0= 1 SEL= 0
+                  70 OUT= 1 A= 0 B = 1 C= 0 D= 1 SEL0= 1 SEL= 1
+                  80 OUT= 1 A= 1 B = 0 C= 1 D= 0 SEL0= 0 SEL= 0
+                 100 OUT= 0 A= 1 B = 0 C= 1 D= 0 SEL0= 0 SEL= 1
+                 120 OUT= 1 A= 1 B = 0 C= 1 D= 0 SEL0= 1 SEL= 0
+                 140 OUT= 0 A= 1 B = 0 C= 1 D= 0 SEL0= 1 SEL= 1
+$finish called from file "mux4_1_tb.v", line 21.
+$finish at simulation time                  160
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 160 ns
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Wed Feb  1 21:25:59 2023

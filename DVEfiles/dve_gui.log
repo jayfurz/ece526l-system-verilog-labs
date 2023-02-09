@@ -1,0 +1,88 @@
+The file '/home/users3/jaf39908/ece_526l/vcdplus.vpd' was opened successfully.
+---------------------------------------------
+
+The tool has just exited abnormally:
+
+
+Release = 'N-2017.12-SP2-9_Full64'  Architecture = 'linux64'  Program = 'DVE'
+
+'34122855 34159885 34161748 140187986635977'
+
+---------------------------------------------
+=======================DVE Context and Call Stack=========================
+Command line: /opt/synopsys/vcs-mx/N-2017.12-SP2-9//gui/dve/linux64/bin/dve.exe -full64
+
+--- Stack trace follows:
+[New LWP 11395]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+
+warning: Cannot parse .gnu_debugdata section; LZMA support was disabled at compile time
+0x00007f800f2de659 in waitpid () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7f800dd49700 (LWP 11395)):
+#0  0x00007f80109d4a35 in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007f8010153940 in ?? () from /lib64/libX11.so.6
+#2  0x00007f8010153e39 in ?? () from /lib64/libX11.so.6
+#3  0x00007f801014913a in XFreeCursor () from /lib64/libX11.so.6
+#4  0x00000000029d5344 in QCursorData::~QCursorData() ()
+#5  0x00000000029d584e in QCursor::~QCursor() ()
+#6  0x00000000029d588c in ?? ()
+#7  0x00007f800f252ce9 in __run_exit_handlers () from /lib64/libc.so.6
+#8  0x00007f800f252d37 in exit () from /lib64/libc.so.6
+#9  0x00000000029becdc in ?? ()
+#10 0x00007f801016849e in _XIOError () from /lib64/libX11.so.6
+#11 0x00007f8010165dfd in _XEventsQueued () from /lib64/libX11.so.6
+#12 0x00007f80101421f4 in XCheckTypedEvent () from /lib64/libX11.so.6
+#13 0x000000000115e393 in ag::dveXThread::run() ()
+#14 0x0000000002a1270a in QThreadInstance::start(void*) ()
+#15 0x00007f80109d0ea5 in start_thread () from /lib64/libpthread.so.0
+#16 0x00007f800f317b0d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7f8012dce140 (LWP 11197)):
+#0  0x00007f800f2de659 in waitpid () from /lib64/libc.so.6
+#1  0x00007f800f25bf62 in do_system () from /lib64/libc.so.6
+#2  0x00007f800f25c311 in system () from /lib64/libc.so.6
+#3  0x00007f801233047b in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /opt/synopsys/vcs-mx/N-2017.12-SP2-9//linux64/lib/liberrorinf.so
+#4  0x00007f80123309cb in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e81c34e9ac4c8988ef4a6e067b3aa9271e9f15440f9e8f69ebc77e2fd65860faa () from /opt/synopsys/vcs-mx/N-2017.12-SP2-9//linux64/lib/liberrorinf.so
+#5  0x00007f8012332017 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /opt/synopsys/vcs-mx/N-2017.12-SP2-9//linux64/lib/liberrorinf.so
+#6  0x00007f801232ac35 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a506fdd009d3de3db1de () from /opt/synopsys/vcs-mx/N-2017.12-SP2-9//linux64/lib/liberrorinf.so
+#7  0x0000000002093cb7 in ag::logErrorMessage(ag::errorType, QString const&, bool) ()
+#8  0x0000000002094454 in ?? ()
+#9  0x00007f800f252cc9 in __run_exit_handlers () from /lib64/libc.so.6
+#10 0x00007f800f252d37 in exit () from /lib64/libc.so.6
+#11 0x00000000029becdc in ?? ()
+#12 0x00007f801016849e in _XIOError () from /lib64/libX11.so.6
+#13 0x00007f8010165dfd in _XEventsQueued () from /lib64/libX11.so.6
+#14 0x00007f801015780d in XPending () from /lib64/libX11.so.6
+#15 0x00000000029dbbe4 in QEventLoop::processEvents(unsigned int) ()
+#16 0x00000000011a2956 in ag::ovaEventLoop::processEvents(unsigned int) ()
+#17 0x0000000002a29159 in QEventLoop::enterLoop() ()
+#18 0x0000000002a290da in QEventLoop::exec() ()
+#19 0x00000000011a22fd in run_cci_event_loop ()
+#20 0x000000000116022e in ag::ovaAppInst::enterEventLoop(int, char**) ()
+#21 0x0000000000ddcde5 in main ()
+
+Process VmPeak: 402864 kb, VmSize: 344336 kb
+System Free Memory: 13597320 kb, System Free Swap: 8193020 kb
+
+No context available
+==========================================================================
