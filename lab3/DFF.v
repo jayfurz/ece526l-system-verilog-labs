@@ -9,13 +9,6 @@
 `define PRIMARY_OUT     2.0
 
 
-// This is a Switch-Reset Latch
-// Inputs are the switch bits:
-// s0, s1
-// And the reset bits:
-// r0, r1
-
-
 
 module dff(q, qbar, clock, data, clear);
         
@@ -33,7 +26,7 @@ module dff(q, qbar, clock, data, clear);
     SR_Latch2 SR1(.Q (sbar),
         .Qnot (s),
         .s0 (rbar),
-        .s1 (rbar),
+        .s1 (1'b1),
         .r0 (clr),
         .r1 (clk));
     SR_Latch2 SR2(.Q (r),
@@ -45,7 +38,7 @@ module dff(q, qbar, clock, data, clear);
     SR_Latch2 SR3(.Q (q),
         .Qnot (qbar),
         .s0 (s),
-        .s1 (s),
+        .s1 (1'b1),
         .r0 (clr),
         .r1 (r));
 

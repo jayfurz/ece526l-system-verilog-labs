@@ -18,7 +18,6 @@
 
 
 module SR_Latch2 (Q, Qnot, s0, s1, r0, r1);
-
     output Q, Qnot;
 
     input s0, s1, r0, r1;
