@@ -1,0 +1,9 @@
+simv*
+DVEfiles/
+*.daidir/
+*.key
+*.vpd
+csrc/
+lab*/DVEfiles/
+lab*/csrc/
+lab*/*.daidir/

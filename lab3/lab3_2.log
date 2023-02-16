@@ -1,0 +1,31 @@
+Command: /home/users3/jaf39908/ece_526l/lab3/./simv -l lab3_2.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Feb 15 21:18 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+                   0: s0 = x, s1 = x, r0 = x, r1 = x, Q = x, Qnot = x
+                  15: s0 = 0, s1 = 0, r0 = 0, r1 = 0, Q = x, Qnot = x
+                  22: s0 = 0, s1 = 0, r0 = 0, r1 = 0, Q = 1, Qnot = 1
+                  30: s0 = 0, s1 = 0, r0 = 0, r1 = 1, Q = 1, Qnot = 1
+                  45: s0 = 1, s1 = 0, r0 = 0, r1 = 0, Q = 1, Qnot = 1
+                  60: s0 = 1, s1 = 0, r0 = 1, r1 = 0, Q = 1, Qnot = 1
+                  75: s0 = 1, s1 = 0, r0 = 1, r1 = 1, Q = 1, Qnot = 1
+                  82: s0 = 1, s1 = 0, r0 = 1, r1 = 1, Q = 1, Qnot = 0
+                  90: s0 = 1, s1 = 0, r0 = 0, r1 = 1, Q = 1, Qnot = 0
+                  97: s0 = 1, s1 = 0, r0 = 0, r1 = 1, Q = 1, Qnot = 1
+                 105: s0 = 1, s1 = 1, r0 = 0, r1 = 0, Q = 1, Qnot = 1
+                 112: s0 = 1, s1 = 1, r0 = 0, r1 = 0, Q = 0, Qnot = 1
+                 120: s0 = 1, s1 = 1, r0 = 0, r1 = 1, Q = 0, Qnot = 1
+                 135: s0 = 1, s1 = 1, r0 = 1, r1 = 0, Q = 0, Qnot = 1
+                 150: s0 = 1, s1 = 1, r0 = 1, r1 = 1, Q = 0, Qnot = 1
+                 165: s0 = 0, s1 = 0, r0 = 1, r1 = 0, Q = 0, Qnot = 1
+                 172: s0 = 0, s1 = 0, r0 = 1, r1 = 0, Q = 1, Qnot = 1
+                 180: s0 = 0, s1 = 0, r0 = 1, r1 = 1, Q = 1, Qnot = 1
+                 187: s0 = 0, s1 = 0, r0 = 1, r1 = 1, Q = 1, Qnot = 0
+                 195: s0 = 0, s1 = 0, r0 = 1, r1 = 0, Q = 1, Qnot = 0
+                 202: s0 = 0, s1 = 0, r0 = 1, r1 = 0, Q = 1, Qnot = 1
+                 210: s0 = 0, s1 = 0, r0 = 0, r1 = 0, Q = 1, Qnot = 1
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 210 ns
+CPU Time:      0.250 seconds;       Data structure size:   0.0Mb
+Wed Feb 15 21:18:54 2023
