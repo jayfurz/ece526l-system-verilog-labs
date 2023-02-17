@@ -3,7 +3,7 @@
 *** ECE 526 L Experiment #2 ***                                         ***
 *** Experiment #2 Delays and Primitive Gates Lab     ***                ***
 *** ***********************************************************************
-*** Filename: lab2_complete.v Created by Justin Fursov, Feb 16 2023     ***
+*** Filename: lab2_3.v Created by Justin Fursov, Feb 16 2023            ***
 *** ---   Initial Release  ---	      	                                ***
 ***************************************************************************/
 
@@ -30,6 +30,8 @@ module Lab2_2 (in1, in2, out1);
     wire NT,A1,A2,O1;
 
     not #(`TIME_DELAY_1 + `FAN_OUT_3) NOT1(NT,in1);
+    
+    // Here is the added OR gate
     or  #(`TIME_DELAY_2 + `FAN_OUT_1) OR1(O1,A1,NT);
     and #(`TIME_DELAY_2 + `FAN_OUT_1) AND1(A1,in2,in1);
     and #(`TIME_DELAY_2 + `FAN_OUT_2) AND2(A2,in1,NT);

@@ -3,7 +3,7 @@
 *** ECE 526 L Experiment #2 ***                                         ***
 *** Experiment #2 Delays and Primitive Gates Lab     ***                ***
 *** ***********************************************************************
-*** Filename: lab2_complete_tb.v Created by Justin Fursov, Feb 16 2023  *** 
+*** Filename: lab2_3_tb.v Created by Justin Fursov, Feb 16 2023  *** 
 *** ---   Initial Release  ---	      	                                ***
 ***************************************************************************/
 
@@ -25,10 +25,13 @@ module Lab2_2_tb();
         .out1 (out));
 
     initial begin
+        // Monitor all the outputs
         $monitor(`MONITOR_STR_1, $time, in1, in2, out, UUT.A1, UUT.A2, UUT.NT, UUT.O1);
     end
 
     initial begin
+        // This allows dve simulation
+        // Again, there are only 4 combinations
         $vcdpluson;
         #15 in1 = 1'b0;
             in2 = 1'b0;

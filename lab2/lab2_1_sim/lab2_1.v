@@ -1,3 +1,17 @@
+/**************************************************************************
+***   	                                                                ***
+*** ECE 526 L Experiment #2 ***                                         ***
+*** Experiment #2 Delays and Primitive Gates Lab     ***                ***
+*** ***********************************************************************
+*** Filename: lab2_1.v Created by Justin Fursov, Feb 16 2023 ***          ***
+*** ---   Initial Release  ---	      	                                ***
+***************************************************************************/
+
+  /* This module is two and gates, a not gate and a nand 
+  * the input and output delays are set to 0. *
+  * There are two inputs, in1 and in2.
+  * There is one output, out1. */
+
 `timescale 1 ns / 100 ps
 
 `define PRIMARY_OUT     0       // ns (primary outputs)

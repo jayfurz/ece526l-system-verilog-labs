@@ -3,7 +3,7 @@
 *** ECE 526 L Experiment #2 ***                                         ***
 *** Experiment #2 Delays and Primitive Gates Lab     ***                ***
 *** ***********************************************************************
-*** Filename: lab2.v Created by Justin Fursov, Feb 16 2023 ***          ***
+*** Filename: lab2_2.v Created by Justin Fursov, Feb 16 2023 ***          ***
 *** ---   Initial Release  ---	      	                                ***
 ***************************************************************************/
 

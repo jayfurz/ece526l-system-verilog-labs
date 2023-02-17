@@ -3,17 +3,14 @@
 *** ECE 526 L Experiment #2 ***                                         ***
 *** Experiment #2 Delays and Primitive Gates Lab     ***                ***
 *** ***********************************************************************
-*** Filename: lab2_tb.v Created by Justin Fursov, Feb 16 2023 ***       ***
+*** Filename: lab2_1_tb.v Created by Justin Fursov, Feb 16 2023 ***       ***
 *** ---   Initial Release  ---	      	                                ***
 ***************************************************************************/
 
 /* This module is a testbench module to test all the different combinations *
 * of inputs. *
 * the reg in1 and in2 are set to all the possible combinations, which is 2^2 *
-* The module from lab2.v is initialized as UUT using port mapping *
-* I have more test cases because I wanted to do all the test cases in reverse
-* in case there is any change due to delays */
-
+* The module from lab2.v is initialized as UUT using port mapping */
 
 `timescale 1 ns/ 100 ps
 
