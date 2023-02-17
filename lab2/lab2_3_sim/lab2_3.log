@@ -1,0 +1,26 @@
+Command: /home/users3/jaf39908/ece_526l/lab2/./simv -l lab2_3.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Feb 16 23:25 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+                   0: in1 = x, in2 = x, | out = x || A1 = x, A2 = x, NT = x, O1 = x
+                  15: in1 = 0, in2 = 0, | out = x || A1 = x, A2 = x, NT = x, O1 = x
+                  18: in1 = 0, in2 = 0, | out = x || A1 = 0, A2 = x, NT = 1, O1 = x
+                  18: in1 = 0, in2 = 0, | out = x || A1 = 0, A2 = 0, NT = 1, O1 = x
+                  20: in1 = 0, in2 = 0, | out = x || A1 = 0, A2 = 0, NT = 1, O1 = 1
+                  28: in1 = 0, in2 = 0, | out = 1 || A1 = 0, A2 = 0, NT = 1, O1 = 1
+                  30: in1 = 0, in2 = 1, | out = 1 || A1 = 0, A2 = 0, NT = 1, O1 = 1
+                  45: in1 = 1, in2 = 1, | out = 1 || A1 = 0, A2 = 0, NT = 1, O1 = 1
+                  48: in1 = 1, in2 = 1, | out = 1 || A1 = 1, A2 = 0, NT = 0, O1 = 1
+                  60: in1 = 1, in2 = 0, | out = 1 || A1 = 1, A2 = 0, NT = 0, O1 = 1
+                  63: in1 = 1, in2 = 0, | out = 1 || A1 = 0, A2 = 0, NT = 0, O1 = 1
+                  65: in1 = 1, in2 = 0, | out = 1 || A1 = 0, A2 = 0, NT = 0, O1 = 0
+                  75: in1 = 0, in2 = 0, | out = 1 || A1 = 0, A2 = 0, NT = 0, O1 = 0
+                  78: in1 = 0, in2 = 0, | out = 1 || A1 = 0, A2 = 0, NT = 1, O1 = 0
+                  80: in1 = 0, in2 = 0, | out = 1 || A1 = 0, A2 = 0, NT = 1, O1 = 1
+$finish called from file "lab2_3_tb.v", line 28.
+$finish at simulation time                  900
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 90000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Thu Feb 16 23:25:15 2023

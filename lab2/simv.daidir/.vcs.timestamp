@@ -27,10 +27,10 @@
 -gen_obj
 -picarchive
 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/bin/vcs1
-lab2.v
-lab2_tb.v
+lab2_3.v
+lab2_3_tb.v
 31
-XDG_SESSION_ID=160
+XDG_SESSION_ID=1570
 XDG_RUNTIME_DIR=/run/user/2137217774
 XDG_DATA_DIRS=/home/users3/jaf39908/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
@@ -46,8 +46,8 @@ TOOL_HOME=/opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64
 SYNOPSYS=/opt/synopsys
 STROOT=/opt/synopsys/icc/T-2022.03-SP2
 SSH_TTY=/dev/pts/0
-SSH_CONNECTION=10.40.45.132 57578 10.209.13.153 22
-SSH_CLIENT=10.40.45.132 57578 22
+SSH_CONNECTION=10.40.47.49 54413 10.209.13.146 22
+SSH_CLIENT=10.40.47.49 54413 22
 SNPS_VCS_CLANG_PATH=/fs/src/interfaces/LLVM_Project/QSCM/opt/llvm-3.9.1/linux64
 SELINUX_USE_CURRENT_RANGE=
 SELINUX_ROLE_REQUESTED=
@@ -63,8 +63,8 @@ CDSDOC_PROJECT=/opt/cadence/cdsdoc_list/
 A__z="*SHLVL
 0
 3
-1675921368 lab2_tb.v
-1675922073 lab2.v
+1676615306 lab2_3_tb.v
+1676614042 lab2_3.v
 1553138458 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/vcsdp.tab
 5
 0 
@@ -72,4 +72,4 @@ A__z="*SHLVL
 1553139291 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/liberrorinf.so
 1553139229 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libsnpsmalloc.so
 1553139863 /opt/synopsys/vcs-mx/N-2017.12-SP2-9/linux64/lib/libvfs.so
-1675922083 simv.daidir
+1676615325 simv.daidir

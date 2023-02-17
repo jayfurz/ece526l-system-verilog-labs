@@ -11,7 +11,8 @@
 * This one initializes from the module named Lab2_1 *
 * This test bench was done with the delays set and without delays *
 * to compare. */
-`timescale 1 ns/ 1 ns
+
+`timescale 1 ns/ 100 ps
 
 
 `define MONITOR_STR_1 "%d: in1 = %b, in2 = %b, | out = %b || A1 = %b, A2 = %b, NT = %b, O1 = %b"
@@ -37,14 +38,6 @@ module Lab2_2_tb();
             in2 = 1'b1;
         #15 in1 = 1'b1;
             in2 = 1'b0;
-        #15 in1 = 1'b0;
-            in2 = 1'b0;
-        #15 in1 = 1'b1;
-            in2 = 1'b0;
-        #15 in1 = 1'b1;
-            in2 = 1'b1;
-        #15 in1 = 1'b0;
-            in2 = 1'b1;
         #15 in1 = 1'b0;
             in2 = 1'b0;
         #15 $finish;

@@ -21,9 +21,9 @@
 `define PRIMARY_OUT     5       // ns (primary outputs)
 `define FAN_OUT_1       0.5       // ns (one output fanout)
 `define FAN_OUT_2       1       // ns (two output fanout)
-`define TIME_DELAY_1    2       // ns (one input gates)
-`define TIME_DELAY_2    4       // ns (two input gates)
-`define TIME_DELAY_3    0       // ns (three input gates)
+`define TIME_DELAY_1    1       // ns (one input gates)
+`define TIME_DELAY_2    2       // ns (two input gates)
+`define TIME_DELAY_3    4       // ns (three input gates)
 
 module Lab2_1 (in1, in2, out1);
     input in1, in2;
