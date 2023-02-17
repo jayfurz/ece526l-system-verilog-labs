@@ -1,3 +1,17 @@
+/**************************************************************************
+***   	                                                                ***
+*** ECE 526 L Experiment #2 ***                                         ***
+*** Experiment #2 Delays and Primitive Gates Lab     ***                ***
+*** ***********************************************************************
+*** Filename: lab2_complete.v Created by Justin Fursov, Feb 16 2023     ***
+*** ---   Initial Release  ---	      	                                ***
+***************************************************************************/
+
+/* This is another module building on the one from the previous section *
+* the Time delays go up to 3 and 4 now because the circuit is more complicated
+* There are still 2 inputs and outputs, but the logic is a little more
+* complicated. */
+
 `timescale 1 ns / 100 ps
 
 `define PRIMARY_OUT     5       // ns (primary outputs)
@@ -9,7 +23,7 @@
 `define TIME_DELAY_3    4       // ns (three input gates)
 `define TIME_DELAY_4    5       // ns (four input gate)
 
-module Lab2_1 (in1, in2, out1);
+module Lab2_2 (in1, in2, out1);
     input in1, in2;
     output out1;
     

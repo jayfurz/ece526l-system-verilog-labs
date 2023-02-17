@@ -1,3 +1,21 @@
+/**************************************************************************
+***   	                                                                ***
+*** ECE 526 L Experiment #2 ***                                         ***
+*** Experiment #2 Delays and Primitive Gates Lab     ***                ***
+*** ***********************************************************************
+*** Filename: lab2.v Created by Justin Fursov, Feb 16 2023 ***          ***
+*** ---   Initial Release  ---	      	                                ***
+***************************************************************************/
+
+/*This module has two inputs, in1 and in2 and has one output, out1 *
+* The Time Delays are explained as follows: *
+* The fan out are the output delays and are either 1 or 2 depending on *
+* how many devices are connected to the output of the device *
+* Time Delay is the input delays *
+* Finally, the primary out is the one for the final output */
+
+
+
 `timescale 1 ns / 100 ps
 
 `define PRIMARY_OUT     5       // ns (primary outputs)
