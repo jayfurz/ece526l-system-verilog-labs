@@ -1,0 +1,41 @@
+Command: /home/users3/jaf39908/ece_526l/lab3/./simv -l lab3.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Feb 28 01:58 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+	Starting testbench for finding longest delay.
+                   0: q = x, qbar = x, clock = 0, data = x, clear = x
+                  50: q = x, qbar = x, clock = 1, data = x, clear = x
+                 100: q = x, qbar = x, clock = 0, data = 0, clear = 0
+                 115: q = x, qbar = 1, clock = 0, data = 0, clear = 0
+                 121: q = 0, qbar = 1, clock = 0, data = 0, clear = 0
+                 150: q = 0, qbar = 1, clock = 1, data = 0, clear = 0
+                 200: q = 0, qbar = 1, clock = 0, data = 0, clear = 1
+                 250: q = 0, qbar = 1, clock = 1, data = 0, clear = 1
+	According to write, data is still set to 0, because it is called before the assignment
+                 300: q = 0, qbar = 1, clock = 0, data = 1, clear = 1
+	Data has been set to 1 at this simulation time according to strobe.
+                 350: q = 0, qbar = 1, clock = 1, data = 1, clear = 1
+                 369: q = 1, qbar = 1, clock = 1, data = 1, clear = 1
+                 376: q = 1, qbar = 0, clock = 1, data = 1, clear = 1
+                 400: q = 1, qbar = 0, clock = 0, data = 1, clear = 1
+                 450: q = 1, qbar = 0, clock = 1, data = 1, clear = 1
+                 500: q = 1, qbar = 0, clock = 0, data = 0, clear = 1
+                 550: q = 1, qbar = 0, clock = 1, data = 0, clear = 1
+                 570: q = 1, qbar = 1, clock = 1, data = 0, clear = 1
+                 576: q = 0, qbar = 1, clock = 1, data = 0, clear = 1
+                 600: q = 0, qbar = 1, clock = 0, data = 1, clear = 1
+                 650: q = 0, qbar = 1, clock = 1, data = 1, clear = 1
+                 669: q = 1, qbar = 1, clock = 1, data = 1, clear = 1
+                 676: q = 1, qbar = 0, clock = 1, data = 1, clear = 1
+	Resetting flip-flop. Running test vectors.
+Test 0 passed!
+Test 1 passed!
+Test 2 passed!
+Test 3 passed!
+$finish called from file "DFF_tb.v", line 82.
+$finish at simulation time                11400
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1140000 ps
+CPU Time:      0.210 seconds;       Data structure size:   0.0Mb
+Tue Feb 28 01:58:42 2023
