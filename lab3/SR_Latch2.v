@@ -1,4 +1,18 @@
-`timescale 1ns/1ns
+/**************************************************************************
+***   	                                                                ***
+*** ECE 526 L Experiment #3 ***                                         ***
+*** Experiment #3 SR Latch and D-Flip-Flop   Lab     ***                ***
+*** ***********************************************************************
+*** Filename: SR_Latch2.v Created by Justin Fursov, Feb 27  2023 **     ***
+*** ---   Initial Release  ---	      	                                ***
+***************************************************************************/
+
+  /* This module is a SR-Latch *
+  * the input and output delays are set as parameters. *
+  * There are four inputs, s0, s1, r0, r1.  *
+  * There are two outputs, q and qbar. */
+
+`timescale 1ns/100ps
 
 `define TIME_DELAY_1    3
 `define TIME_DELAY_2    4
@@ -27,10 +41,11 @@ module SR_Latch2 (  Q,
     output Q, Qnot;
     input s0, s1, r0, r1;
 
-    // Declare parameters for delay. 0 output width = primary out
+    // Declare parameters for delay.
+    // Default to 3 inputs and primary outs for both NANDs
     parameter INPUT_DELAY_S = `TIME_DELAY_3,
               INPUT_DELAY_R = `TIME_DELAY_3,
-              OUTPUT_DELAY_Q = `PRIMARY_OUT;
+              OUTPUT_DELAY_Q = `PRIMARY_OUT,
               OUTPUT_DELAY_QNOT = `PRIMARY_OUT;
               
 

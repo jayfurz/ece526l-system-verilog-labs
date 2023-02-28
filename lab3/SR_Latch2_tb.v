@@ -1,3 +1,15 @@
+/**************************************************************************
+***   	                                                                ***
+*** ECE 526 L Experiment #3 ***                                         ***
+*** Experiment #3 SR Latch and D-Flip-Flop   Lab     ***                ***
+*** ***********************************************************************
+*** Filename: SR_Latch2_tb.v Created by Justin Fursov, Feb 27 2023      ***
+*** ---   Initial Release  ---	      	                                ***
+***************************************************************************/
+
+  /* This module is a SR-Latch testbench *
+   * Instantiated using port mapping */
+
 `timescale 1ns/1ns
 
 `define MONITOR_STR_1 "%d: s0 = %b, s1 = %b, r0 = %b, r1 = %b, Q = %b, Qnot = %b"
