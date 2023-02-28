@@ -17,12 +17,24 @@
 
 
 
-module SR_Latch2 (Q, Qnot, s0, s1, r0, r1);
-    output Q, Qnot;
+module SR_Latch2 (  Q,
+                    Qnot,
+                    s0,
+                    s1,
+                    r0,
+                    r1);
 
+    output Q, Qnot;
     input s0, s1, r0, r1;
 
-    nand #(`TIME_DELAY_3 + `PRIMARY_OUT) NAND1(Q, s0, s1, Qnot);
-    nand #(`TIME_DELAY_3 + `PRIMARY_OUT) NAND2(Qnot, r0, r1, Q);
+    // Declare parameters for delay. 0 output width = primary out
+    parameter INPUT_DELAY_S = `TIME_DELAY_3,
+              INPUT_DELAY_R = `TIME_DELAY_3,
+              OUTPUT_DELAY_Q = `PRIMARY_OUT;
+              OUTPUT_DELAY_QNOT = `PRIMARY_OUT;
+              
+
+    nand #(INPUT_DELAY_S + OUTPUT_DELAY_Q) NAND1(Q, s0, s1, Qnot);
+    nand #(INPUT_DELAY_R + OUTPUT_DELAY_QNOT) NAND2(Qnot, r0, r1, Q);
 
 endmodule
