@@ -1,0 +1,42 @@
+Command: /home/users3/jaf39908/ece_526l/lab5/./simv -l before_aasd.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Mar  8 21:54 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+                   0: The value of counter is   x.
+                 100: The value of counter is   0.
+                 350: The value of counter is   1.
+                 450: The value of counter is   2.
+                 550: The value of counter is   3.
+                 650: The value of counter is   4.
+                 750: The value of counter is   5.
+                 850: The value of counter is   6.
+                 950: The value of counter is   7.
+                1050: The value of counter is   8.
+                1150: The value of counter is 240.
+                1250: The value of counter is 241.
+                1350: The value of counter is 242.
+                1450: The value of counter is 243.
+                1550: The value of counter is 244.
+                1650: The value of counter is 245.
+                1750: The value of counter is 246.
+                1850: The value of counter is 247.
+                1950: The value of counter is 248.
+                2050: The value of counter is 249.
+                2150: The value of counter is 250.
+                2250: The value of counter is 251.
+                2350: The value of counter is 252.
+                2450: The value of counter is 253.
+                2550: The value of counter is 254.
+                2650: The value of counter is 255.
+                2750: The value of counter is   0.
+                2850: The value of counter is   1.
+                2950: The value of counter is   2.
+                3050: The value of counter is   3.
+                3150: The value of counter is   4.
+$finish called from file "/home/users3/jaf39908/ece_526l/lab5/counter8_tb.v", line 36.
+$finish at simulation time                32000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3200000 ps
+CPU Time:      0.230 seconds;       Data structure size:   0.0Mb
+Wed Mar  8 21:54:42 2023
