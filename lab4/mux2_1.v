@@ -9,8 +9,8 @@ module mux2_1(out, a, b, sel);
   wire a1, b1, sel_n;
 
   // The netlist
-  not (sel_n, sel);
-  and(a1, a, sel_n);
-  and (b1, b, sel);
-  or (out, a1, b1);
+  not #(`TIME_DELAY_1 + `FAN_OUT_1) (sel_n, sel);
+  and #(`TIME_DELAY_2, `FAN_OUT_1) (a1, a, sel_n);
+  and #(`TIME_DELAY_2 + `FAN_OUT_1) (b1, b, sel);
+  or #(`TIME_DELAY_2 + `FAN_OUT_1) (out, a1, b1);
 endmodule

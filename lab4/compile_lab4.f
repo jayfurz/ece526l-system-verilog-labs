@@ -1,1 +1,1 @@
-vcd -debug -full64 *.v
+vcs -debug -full64 *.v
