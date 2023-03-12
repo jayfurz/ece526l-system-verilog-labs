@@ -1,0 +1,60 @@
+Command: /home/users3/jaf39908/ece_526l/lab4/./simv -l 51.81mhz_clock_fail.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Mar 12 03:07 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+	***Starting testbench for register***
+
+	Checking if data gets written to the register with RST high and ENA high.
+                   0: ena = x, clk = 0, rst = x, data = xxxxxxxx, out = xxxxxxxx
+                  10: ena = x, clk = 1, rst = x, data = xxxxxxxx, out = xxxxxxxx
+                  19: ena = x, clk = 0, rst = 0, data = 00000000, out = xxxxxxxx
+                  29: ena = x, clk = 1, rst = 0, data = 00000000, out = xxxxxxxx
+                  39: ena = x, clk = 0, rst = 1, data = 00000000, out = xxxxxxxx
+                  40: ena = x, clk = 0, rst = 1, data = 00000000, out = 00000000
+                  48: ena = x, clk = 1, rst = 1, data = 00000000, out = 00000000
+                  58: ena = 1, clk = 0, rst = 1, data = 01010101, out = 00000000
+                  68: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+	Test 1 failed!
+
+	Checking the output if DATA has all bits HIGH
+                  77: ena = 1, clk = 0, rst = 1, data = 01010101, out = 00000000
+                  87: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+                  97: ena = 1, clk = 0, rst = 1, data = 11111111, out = 00000000
+                 106: ena = 1, clk = 1, rst = 1, data = 11111111, out = 01010101
+	Test 2 failed!
+
+	Checking if the output of register becomes 0 with RST low.
+                 116: ena = 1, clk = 0, rst = 1, data = 11111111, out = 01010101
+                 125: ena = 1, clk = 1, rst = 1, data = 11111111, out = 01010101
+                 135: ena = 1, clk = 0, rst = 0, data = 11111111, out = 01010101
+                 145: ena = 1, clk = 1, rst = 0, data = 11111111, out = 11111111
+	Test 3 failed!
+
+	Checking to make sure data is not written if ENA is low.
+                 154: ena = 1, clk = 0, rst = 0, data = 11111111, out = 01010101
+                 156: ena = 1, clk = 0, rst = 0, data = 11111111, out = 00000000
+                 164: ena = 1, clk = 1, rst = 0, data = 11111111, out = 00000000
+                 174: ena = 0, clk = 0, rst = 1, data = 01010101, out = 00000000
+                 183: ena = 0, clk = 1, rst = 1, data = 01010101, out = 00000000
+	Test 4 passed!
+
+	Checking that by changing ENA to high, the data is written to the register.
+                 193: ena = 0, clk = 0, rst = 1, data = 01010101, out = 00000000
+                 203: ena = 0, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 212: ena = 1, clk = 0, rst = 1, data = 01010101, out = 00000000
+                 222: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+	Test 5 failed!
+
+	Checking that the previous register is preserved when ENA is low.
+                 232: ena = 1, clk = 0, rst = 1, data = 01010101, out = 00000000
+                 241: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 251: ena = 0, clk = 0, rst = 1, data = 10101010, out = 00000000
+                 261: ena = 0, clk = 1, rst = 1, data = 10101010, out = 01010101
+	Test 6 failed!
+$finish called from file "register_tb_maxclock.v", line 77.
+$finish at simulation time                27020
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 270200 ps
+CPU Time:      0.210 seconds;       Data structure size:   0.0Mb
+Sun Mar 12 03:07:30 2023

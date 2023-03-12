@@ -1,0 +1,66 @@
+Command: /home/users3/jaf39908/ece_526l/lab4/./simv -l fastest_clock_passing.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Mar 12 03:42 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+	***Starting testbench for register***
+
+	Checking if data gets written to the register with RST high and ENA high.
+                   0: ena = x, clk = 1, rst = x, data = xxxxxxxx, out = xxxxxxxx
+                  19: ena = x, clk = 0, rst = x, data = xxxxxxxx, out = xxxxxxxx
+                  39: ena = x, clk = 1, rst = 0, data = 00000000, out = xxxxxxxx
+                  58: ena = x, clk = 0, rst = 0, data = 00000000, out = xxxxxxxx
+                  59: ena = x, clk = 0, rst = 0, data = 00000000, out = 00000000
+                  77: ena = x, clk = 1, rst = 1, data = 00000000, out = 00000000
+                  97: ena = x, clk = 0, rst = 1, data = 00000000, out = 00000000
+                 116: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 135: ena = 1, clk = 0, rst = 1, data = 01010101, out = 00000000
+                 154: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 174: ena = 1, clk = 0, rst = 1, data = 01010101, out = 01010101
+	Test 1 passed!
+
+	Checking the output if DATA has all bits HIGH
+                 193: ena = 1, clk = 1, rst = 1, data = 01010101, out = 01010101
+                 212: ena = 1, clk = 0, rst = 1, data = 01010101, out = 01010101
+                 232: ena = 1, clk = 1, rst = 1, data = 11111111, out = 01010101
+                 251: ena = 1, clk = 0, rst = 1, data = 11111111, out = 01010101
+                 270: ena = 1, clk = 1, rst = 1, data = 11111111, out = 01010101
+                 290: ena = 1, clk = 0, rst = 1, data = 11111111, out = 11111111
+	Test 2 passed!
+
+	Checking if the output of register becomes 0 with RST low.
+                 309: ena = 1, clk = 1, rst = 1, data = 11111111, out = 11111111
+                 328: ena = 1, clk = 0, rst = 1, data = 11111111, out = 11111111
+                 347: ena = 1, clk = 1, rst = 0, data = 11111111, out = 11111111
+                 367: ena = 1, clk = 0, rst = 0, data = 11111111, out = 11111111
+                 368: ena = 1, clk = 0, rst = 0, data = 11111111, out = 00000000
+	Test 3 passed!
+
+	Checking to make sure data is not written if ENA is low.
+                 386: ena = 1, clk = 1, rst = 0, data = 11111111, out = 00000000
+                 405: ena = 1, clk = 0, rst = 0, data = 11111111, out = 00000000
+                 425: ena = 0, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 444: ena = 0, clk = 0, rst = 1, data = 01010101, out = 00000000
+	Test 4 passed!
+
+	Checking that by changing ENA to high, the data is written to the register.
+                 463: ena = 0, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 483: ena = 0, clk = 0, rst = 1, data = 01010101, out = 00000000
+                 502: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 521: ena = 1, clk = 0, rst = 1, data = 01010101, out = 00000000
+                 540: ena = 1, clk = 1, rst = 1, data = 01010101, out = 00000000
+                 560: ena = 1, clk = 0, rst = 1, data = 01010101, out = 01010101
+	Test 5 passed!
+
+	Checking that the previous register is preserved when ENA is low.
+                 579: ena = 1, clk = 1, rst = 1, data = 01010101, out = 01010101
+                 598: ena = 1, clk = 0, rst = 1, data = 01010101, out = 01010101
+                 618: ena = 0, clk = 1, rst = 1, data = 10101010, out = 01010101
+                 637: ena = 0, clk = 0, rst = 1, data = 10101010, out = 01010101
+	Test 6 passed!
+$finish called from file "register_tb_maxclock.v", line 77.
+$finish at simulation time                65620
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 656200 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Sun Mar 12 03:42:11 2023
