@@ -1,0 +1,47 @@
+Command: /home/users3/jaf39908/ece_526l/lab5/./simv -l after_aasd_reset.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Mar 20 22:33 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+                   0: The value of counter is   x. rst_ni: x
+                 100: The value of counter is   0. rst_ni: 0
+                 200: The value of counter is   0. rst_ni: 1
+                 450: The value of counter is   1. rst_ni: 1
+                 550: The value of counter is   2. rst_ni: 1
+                 650: The value of counter is   3. rst_ni: 1
+                 750: The value of counter is   4. rst_ni: 1
+                 850: The value of counter is   5. rst_ni: 1
+                 950: The value of counter is   6. rst_ni: 1
+                1050: The value of counter is   7. rst_ni: 1
+                1150: The value of counter is   8. rst_ni: 1
+                1250: The value of counter is 240. rst_ni: 1
+                1350: The value of counter is 241. rst_ni: 1
+                1450: The value of counter is 242. rst_ni: 1
+                1550: The value of counter is 243. rst_ni: 1
+                1650: The value of counter is 244. rst_ni: 1
+                1750: The value of counter is 245. rst_ni: 1
+                1850: The value of counter is 246. rst_ni: 1
+                1950: The value of counter is 247. rst_ni: 1
+                2050: The value of counter is 248. rst_ni: 1
+                2150: The value of counter is 249. rst_ni: 1
+                2250: The value of counter is 250. rst_ni: 1
+                2350: The value of counter is 251. rst_ni: 1
+                2450: The value of counter is 252. rst_ni: 1
+                2550: The value of counter is 253. rst_ni: 1
+                2650: The value of counter is 254. rst_ni: 1
+                2750: The value of counter is 255. rst_ni: 1
+                2850: The value of counter is   0. rst_ni: 1
+                2950: The value of counter is   1. rst_ni: 1
+                3050: The value of counter is   2. rst_ni: 1
+                3150: The value of counter is   3. rst_ni: 1
+                3250: The value of counter is   4. rst_ni: 1
+                3300: The value of counter is   0. rst_ni: 0
+                3400: The value of counter is   0. rst_ni: 1
+                3650: The value of counter is   1. rst_ni: 1
+                3750: The value of counter is   2. rst_ni: 1
+$finish called from file "/home/users3/jaf39908/ece_526l/lab5/counter8_tb.v", line 40.
+$finish at simulation time                38000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3800000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Mon Mar 20 22:33:53 2023
