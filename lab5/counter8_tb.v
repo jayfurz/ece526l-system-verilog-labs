@@ -9,16 +9,19 @@
 
 /* This is the testbench to check if the counter module works correctly */
 
+
 `timescale 1ns/100ps
 
 module counter8_tb();
-    // Testbench signals
-    reg en_i, clk_i, rst_ni, load_i; // Control signals
-    reg [7:0] data_i;                // Data input signal
-    wire [7:0] cnt_o;                // Counter output signal
-    wire aasd_rst;                   // Unused reset signal
 
-    // Instantiating the 8-bit counter module
+    // Inputs
+    reg en_i, clk_i, rst_ni, load_i;
+    reg [7:0] data_i;
+
+    // Outputs
+    wire [7:0] cnt_o;
+
+    // Instantiate the top-level design
     counter_8_bit u_counter (
         .clk_i(clk_i),
         .rst_ni(rst_ni),
@@ -28,36 +31,50 @@ module counter8_tb();
         .cnt_o(cnt_o)
     );
 
-    // Clock generation
+    // Initial block for initializing signals
     initial begin
-        $vcdpluson; // Turn on VCD+ output
-        clk_i = 0;  // Initialize clock signal to low
+        $vcdpluson;
+        clk_i = 0;
     end
 
+    // Clock generator with a 20 ns period
     always begin
-        #50 clk_i = ~clk_i; // Toggle clock signal every 50 time units
+        #10 clk_i = ~clk_i;
     end
 
-    // Testbench stimulus
+    // Test sequence
     initial begin
-        // Monitor output and reset signal during simulation
         $monitor("%d: The value of counter is %d. rst_ni: %d", $time, cnt_o, rst_ni);
-        
-        // Reset and enable signals sequence
-        #100 rst_ni = 0;    // Assert reset
-        #100 rst_ni = 1;    // Deassert reset
-        #100 en_i = 1;      // Enable counter
-        
-        // Load data into the counter
-        #900 load_i = 1; data_i = 240; // Load 240 into the counter
-        #100 load_i = 0;               // Deassert load signal
 
-        // Reset counter again
-        #2000 rst_ni = 0; // Assert reset
-        #100 rst_ni = 1;  // Deassert reset
+        // Asynchronous reset
+        #20 rst_ni = 0;
+        #20 rst_ni = 1;
 
-        #400; // Wait for 400 time units
+        // Enable the counter
+        #20 en_i = 1;
 
-        $finish; // End the simulation
+        // Increment the counter
+        #180;
+
+        // Parallel load 240 decimal
+        #20 load_i = 1; data_i = 240;
+        #20 load_i = 0;
+
+        // Count from 240 until roll over
+        #400;
+
+        // Reset overrides both load and increment
+        #20 rst_ni = 0;
+        #20 rst_ni = 1;
+
+        // Correct functioning of enable
+        #20 en_i = 0;
+        #80 en_i = 1;
+
+        // Finish the simulation
+        #200;
+        $finish;
     end
+
 endmodule
+
