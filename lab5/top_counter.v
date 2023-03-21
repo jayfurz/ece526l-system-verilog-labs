@@ -22,6 +22,9 @@ input [7:0] data_i, // Data input
 output [7:0] cnt_o // Counter output
 );
 
+// Asynchronous Active Low Set Dominant (AASD) reset signal
+wire aasd_rst;
+
 // Instantiating counter module with aasd_rst signal
 counter counter1(
     .clk_i(clk_i),
@@ -31,9 +34,6 @@ counter counter1(
     .data_i(data_i),
     .cnt_o(cnt_o)
 );
-
-// Asynchronous Active Low Set Dominant (AASD) reset signal
-wire aasd_rst;
 
 // Instantiating AASD reset module
 aasd_reset aasd1(

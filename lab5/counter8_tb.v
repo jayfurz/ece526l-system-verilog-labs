@@ -53,8 +53,8 @@ module counter8_tb();
         // Enable the counter
         #20 en_i = 1;
 
-        // Increment the counter
-        #180;
+        // Increment the counter until 8
+        #160;
 
         // Parallel load 240 decimal
         #20 load_i = 1; data_i = 240;
@@ -64,11 +64,13 @@ module counter8_tb();
         #400;
 
         // Reset overrides both load and increment
+        load_i = 1;
         #20 rst_ni = 0;
         #20 rst_ni = 1;
+        #60 load_i = 0;
 
         // Correct functioning of enable
-        #20 en_i = 0;
+        #40 en_i = 0;
         #80 en_i = 1;
 
         // Finish the simulation
