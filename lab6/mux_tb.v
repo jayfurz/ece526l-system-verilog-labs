@@ -18,25 +18,36 @@ wire [4:0] out5;
 wire [5:0] out6;
 reg sel;
 
-mux mux1(
-    .out(out1),
-    .a(a[0:0]),
-    .b(b[0:0]),
-    .sel(sel));
-mux #(4) mux4(
+// Instantiate multiplexers with different widths using three different methods
+
+// Method 1: Direct assignment of parameter values during instantiation
+mux mux4(
     .out(out4),
     .a(a[3:0]),
     .b(b[3:0]),
     .sel(sel));
-mux #(5) mux5(
+assign mux4.Width = 4;
+
+// Method 2: Using the defparam statement
+mux mux5(
     .out(out5),
     .a(a[4:0]),
     .b(b[4:0]),
     .sel(sel));
+defparam mux5.Width = 5;
+
+// Method 3: Using the #() parameter passing syntax
 mux #(6) mux6(
     .out(out6),
     .a(a),
     .b(b),
+    .sel(sel));
+
+// Instantiate single bit multiplexer
+mux mux1(
+    .out(out1),
+    .a(a[0:0]),
+    .b(b[0:0]),
     .sel(sel));
 
 initial begin
@@ -45,6 +56,7 @@ initial begin
     a = 6'b100111; b = 6'b010000;
     sel = 0;
 
+    // Display results at various time steps
     #1 $display("Time: %d, sel: %b, a: %b, b: %b, out1: %b, out4: %b, out5: %b, out6: %b", $time, sel, a, b, out1, out4, out5, out6);
     #10 sel = 1;
     #1 $display("Time: %d, sel: %b, a: %b, b: %b, out1: %b, out4: %b, out5: %b, out6: %b", $time, sel, a, b, out1, out4, out5, out6);

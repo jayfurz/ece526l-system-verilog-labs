@@ -19,7 +19,8 @@ module mux(out, a, b, sel);
     genvar i;
     generate
     for (i = 0; i < Width; i = i + 1) begin: bit_mux
-        assign out[i] = (a[i] == b[i])? a[i] : (a[i] & ~sel) | (b[i] & sel);
+        // out should be a or b if they are equal, otherwise one or the other
+        assign out[i] = (a[i] == b[i])? a[i] : (a[i] & ~sel) | (b[i] & sel); 
     end
     endgenerate
 
