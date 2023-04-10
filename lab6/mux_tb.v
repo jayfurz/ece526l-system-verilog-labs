@@ -20,13 +20,12 @@ reg sel;
 
 // Instantiate multiplexers with different widths using three different methods
 
-// Method 1: Direct assignment of parameter values during instantiation
-mux mux4(
+// Method 1: Port mapping of parameter values during instantiation
+mux #(.Width(4)) mux4(
     .out(out4),
     .a(a[3:0]),
     .b(b[3:0]),
     .sel(sel));
-assign mux4.Width = 4;
 
 // Method 2: Using the defparam statement
 mux mux5(
