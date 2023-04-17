@@ -7,7 +7,7 @@
 ***                                                                     ***
 ***************************************************************************/
 
-/* This is the module for the variable size registe file */
+/* This is the module for the variable size register file */
 
 module register_file
     #(parameter Width = 8,
