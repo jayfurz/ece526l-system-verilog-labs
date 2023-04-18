@@ -26,6 +26,5 @@ always @ (posedge ws_i) begin
     end
 end
 
-assign data_io = (!cs_ni && oe_i)? memory[address_i]: 'bz;
-
+assign data_io = (!cs_ni && oe_i) ? memory[address_i]: 'bz;
 endmodule
