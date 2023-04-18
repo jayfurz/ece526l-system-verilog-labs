@@ -20,12 +20,25 @@ module register_file
 );
 
 reg [Width-1:0] memory [0:2**Depth-1];
+reg [Width-1:0] data_reg;
+
+// Write to memory
 always @ (posedge ws_i) begin
     if (!cs_ni && !oe_i) begin
         memory[address_i] <= data_io;
     end
 end
 
-assign data_io = (!cs_ni && oe_i)? memory[address_i]: 'bz;
+// Tri-state buffer for read operation
+always @ (*) begin
+    if (!cs_ni && oe_i) begin
+        data_reg = memory[address_i];
+    end else begin
+        data_reg = 'bz;
+    end
+end
+
+// Assign the output to inout port
+assign data_io = data_reg;
 
 endmodule
