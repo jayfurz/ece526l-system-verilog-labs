@@ -23,7 +23,7 @@ module tb_rom();
         .oe_i(oe),
         .cs_ni(cs_n),
         .address_i(address),
-        .data_io(data)
+        .data_o(data)
     );
 
     initial begin
