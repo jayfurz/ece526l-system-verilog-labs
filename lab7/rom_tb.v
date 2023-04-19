@@ -17,6 +17,8 @@ module tb_rom();
     reg cs_n;
     reg [Depth-1:0] address;
     wire [Width-1:0] data;
+    reg [7:0] expected_values [5'h0:5'h1F];
+    reg [7:0] temp_data;
 
     // Instantiate the ROM module
     rom #(.Width(Width), .Depth(Depth)) rom_inst (
@@ -53,7 +55,6 @@ module tb_rom();
     task test_memory_initialization;
         begin
             integer i;
-            reg [7:0] expected_values [5'h0:5'h1F];
             // Initialize expected_values for the specified addresses
             expected_values[5'h00] = 8'h00;
             expected_values[5'h01] = 8'h00;
@@ -104,7 +105,6 @@ module tb_rom();
     task test_unspecified_locations;
         begin
             integer i;
-            reg [7:0] expected_values [5'h18:5'h1B];
             expected_values[5'h18] = 8'hX;
             expected_values[5'h19] = 8'hX;
             expected_values[5'h1A] = 8'hX;
@@ -114,7 +114,7 @@ module tb_rom();
                 oe = 1'b1;
                 cs_n = 1'b0;
                 #10;
-                if (data !== expected_values[i]) begin
+                if (data !== expected_values[address]) begin
                     $display("Unspecified Locations Test: FAILED at address %0h, expected: %0h, got: %0h", 5'h18 + i, expected_values[i], data);
                 end else begin
                     $display("Unspecified Locations Test: PASSED at address %0h, expected: %0h, got: %0h", 5'h18 + i, expected_values[i], data);
@@ -126,7 +126,6 @@ module tb_rom();
     task scramble_and_write_bytes;
         begin
             integer i;
-            reg [7:0] temp_data;
             for (i = 0; i < 8; i = i + 1) begin
                 address = 5'h10 + i;
                 oe = 1'b1;
@@ -143,7 +142,6 @@ module tb_rom();
     task test_memory_scrambling;
         begin
             integer i;
-            reg [7:0] expected_values [5'h10:5'h17];
 
             // Initialize the scrambled values for addresses 5'h10 to 5'h17
             expected_values[5'h10] = 8'h73;
@@ -159,7 +157,7 @@ module tb_rom();
                 oe = 1'b1;
                 cs_n = 1'b0;
                 #10;
-                if (data !== expected_values[i]) begin
+                if (data !== expected_values[address]) begin
                     $display("Memory Scrambling Test: FAILED at address %0h, expected: %0h, got: %0h", 5'h10 + i, expected_values[i], data);
                 end else begin
                     $display("Memory Scrambling Test: PASSED at address %0h, expected: %0h, got: %0h", 5'h10 + i, expected_values[i], data);
