@@ -1,7 +1,7 @@
 Command: /home/users3/jaf39908/ece_526l/lab7/./simv -l lab7.log
 Chronologic VCS simulator copyright 1991-2017
 Contains Synopsys proprietary information.
-Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 18 02:39 2023
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 18 09:51 2023
 VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
 Test A: PASSED
 Test B: PASSED
@@ -19,5 +19,5 @@ $finish called from file "./register_file_tb.v", line 148.
 $finish at simulation time              3630000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 3630000 ps
-CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
-Tue Apr 18 02:39:36 2023
+CPU Time:      0.250 seconds;       Data structure size:   0.0Mb
+Tue Apr 18 09:51:25 2023

@@ -28,17 +28,16 @@ always @ (posedge ws_i) begin
         memory[address_i] <= data_io;
     end
 end
+wire read_enable;
+assign read_enable = (!cs_ni && oe_i);
+genvar i;
+generate
+    for (i= 0; i < Width; i = i+1) begin : tristate_buf
+        bufif1 buffer (data_io[i], memory[address_i][i], read_enable);
+    end
+endgenerate
 
 // Tri-state buffer for read operation
-always @ (*) begin
-    if (!cs_ni && oe_i) begin
-        data_reg = memory[address_i];
-    end else begin
-        data_reg = 'bz;
-    end
-end
-
-// Assign the output to inout port
-assign data_io = data_reg;
+//bufif1 [Width-1:0] tri_buffer(data_io, memory[address_i], read_enable);
 
 endmodule
