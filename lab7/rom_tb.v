@@ -27,6 +27,7 @@ module tb_rom();
     );
 
     initial begin
+        $vcdpluson;
         // Initialize the memory with hex values
         $readmemh("rom_data.hex", rom_inst.memory);
 
