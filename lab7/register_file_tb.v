@@ -41,6 +41,7 @@ module register_file_tb(data_io);
     // Test bench stimulus
     initial begin
         
+        $vcdplusmemon;
         $vcdpluson;
         // Passed variable stays at 1 unless fail
         passed = 1;
@@ -125,6 +126,7 @@ module register_file_tb(data_io);
         for (i = 0; i < Width; i=i+1) begin
             // Write data
             #10 cs_n = 1'b0;
+            #10 oe = 1'b0;
             #10 ws = 1'b0;
             #10 address = i;
             #10 data_reg = 1 << i;

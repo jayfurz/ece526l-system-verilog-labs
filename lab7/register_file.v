@@ -8,7 +8,7 @@
 ***************************************************************************/
 
 /* This is the module for the variable size register file */
-
+`timescale 1ns/1ps
 module register_file
     #(parameter Width = 8,
     parameter Depth = 5)(
