@@ -1,8 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "inex" ]; then
-  vcs -full64 -debug adder.v multiplier.v register.v level_2.v
-top_level.v inexaustive_tb.v -lca -kdb -o simv_inex
+  vcs -full64 -debug level_1.v level_2.v top_level.v inexaustive_tb.v -lca -kdb -o simv_inex
 elif [ "$1" == "rom" ]; then
   vcs -full64 -debug rom.v rom_tb.v -lca -kdb -o simv_rom
 else

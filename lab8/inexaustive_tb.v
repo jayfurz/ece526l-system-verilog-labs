@@ -17,7 +17,7 @@ parameter DATA_WIDTH = 4;
 reg clk;
 reg rst;
 reg [DATA_WIDTH-1:0] data_in, coef11, coef12, coef21, coef22;
-wire [DATA_WIDTH+1:0] final_sum;
+wire [2*DATA_WIDTH+1:0] final_sum;
 
 // Instantiate the sum_of_products module
 sum_of_products #(
@@ -60,13 +60,13 @@ initial begin
     #10 data_in = 4'b0000; coef11 = 4'b0000; coef12 = 4'b0000; coef21 = 4'b0000; coef22 = 4'b0000;
 
     // Test with all ones
-    #10 data_in = 4'b1111; coef11 = 4'b1111; coef12 = 4'b1111; coef21 = 4'b1111; coef22 = 4'b1111;
+    #40 data_in = 4'b1111; coef11 = 4'b1111; coef12 = 4'b1111; coef21 = 4'b1111; coef22 = 4'b1111;
 
     // Test with alternating bit patterns
-    #10 data_in = 4'b0101; coef11 = 4'b1010; coef12 = 4'b0101; coef21 = 4'b1010; coef22 = 4'b0101;
+    #40 data_in = 4'b0101; coef11 = 4'b1010; coef12 = 4'b0101; coef21 = 4'b1010; coef22 = 4'b0101;
 
     // Test with a mix of different bit patterns
-    #10 data_in = 4'b1001; coef11 = 4'b0011; coef12 = 4'b1100; coef21 = 4'b1010; coef22 = 4'b0110;
+    #40 data_in = 4'b1001; coef11 = 4'b0011; coef12 = 4'b1100; coef21 = 4'b1010; coef22 = 4'b0110;
     
     // Finish simulation
     #10 $finish;

@@ -19,8 +19,12 @@ module level_two #(
     input wire [DATA_WIDTH-1:0] data_in,
     input wire [DATA_WIDTH-1:0] coef1,
     input wire [DATA_WIDTH-1:0] coef2,
-    output wire [DATA_WIDTH:0] prod_sum
+    output wire [DATA_WIDTH-1:0] reg2_out,
+    output wire [(2*DATA_WIDTH):0] prod_sum
 );
+
+wire [DATA_WIDTH-1:0] reg1_out;
+wire [(2*DATA_WIDTH)-1:0] mult1_out, mult2_out;
 
 // Instance of register1
 scalable_register #(.DATA_WIDTH(DATA_WIDTH)) register1 (
@@ -53,13 +57,11 @@ scalable_multiplier #(.DATA_WIDTH(DATA_WIDTH)) multiplier2 (
 );
 
 // Instance of adder
-scalable_adder #(.DATA_WIDTH(DATA_WIDTH+1)) adder (
+scalable_adder #(.DATA_WIDTH((2*DATA_WIDTH))) adder (
     .A(mult1_out),
     .B(mult2_out),
     .S(prod_sum)
 );
 
-wire [DATA_WIDTH-1:0] reg1_out, reg2_out;
-wire [(2*DATA_WIDTH)-1:0] mult1_out, mult2_out;
 
 endmodule
