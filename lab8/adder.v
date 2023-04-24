@@ -1,30 +1,24 @@
 /**************************************************************************
 ***   	                                                                ***
 *** ECE 526 L Lab #8                                                    ***
-*** Experiment #7 Variable Size Multiplier Adder                        ***
+*** Experiment #8 Variable Size Multiplier Adder                        ***
 *** ***********************************************************************
-*** Filename: register.v Created by Justin Fursov, Apr 5 2023           ***
+*** Filename: adder.v Created by Justin Fursov, Apr 18 2023             ***
 ***                                                                     ***
 ***************************************************************************/
 
-/* This is the module for the variable size register*/
+/* This is the module for the variable size adder*/
 
 `timescale 1ns/1ps
-module scalable_register #(
+
+module scalable_adder #(
     parameter DATA_WIDTH = 4
 ) (
-    input wire clk,
-    input wire rst,
-    input wire [DATA_WIDTH-1:0] data_in,
-    output reg [DATA_WIDTH-1:0] data_out
+    input wire [DATA_WIDTH-1:0] A,
+    input wire [DATA_WIDTH-1:0] B,
+    output wire [DATA_WIDTH:0] S
 );
 
-always @(posedge clk or posedge rst) begin
-    if (rst) begin
-        data_out <= 0;
-    end else begin
-        data_out <= data_in;
-    end
-end
+assign S = A + B;
 
 endmodule
