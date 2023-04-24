@@ -1,6 +1,6 @@
 
 `timescale 1ns / 1ps
-primitive 2_1_mux(out, i0, i1, s);
+primitive mux_2_1(out, i0, i1, s);
     output out;
     input i0, i1, s;
 
@@ -16,12 +16,12 @@ primitive 2_1_mux(out, i0, i1, s);
 endprimitive
 
 
-module tb_2_1_mux();
+module tb_mux_2_1();
     reg i0, i1, s;
     wire out;
 
     // Instantiate the 2_1_mux primitive
-    primitive_2_1_mux mux_instance(out, i0, i1, s);
+    mux_2_1 mux_instance(out, i0, i1, s);
 
     // Testbench stimulus
     initial begin
