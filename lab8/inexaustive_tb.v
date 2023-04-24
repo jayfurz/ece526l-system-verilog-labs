@@ -54,7 +54,7 @@ initial begin
     #10 rst = 0;
 
     // Monitor the inputs and output
-    $monitor("At time %t: data_in=%b coef11=%b coef12=%b coef21=%b coef22=%b final_sum=%b", $time, data_in, coef11, coef12, coef21, coef22, final_sum);
+    $monitor("At time %t: data_in=%d coef11=%d coef12=%d coef21=%d coef22=%d final_sum=%d", $time, data_in, coef11, coef12, coef21, coef22, final_sum);
 
     // Test with all zeros
     #10 data_in = 4'b0000; coef11 = 4'b0000; coef12 = 4'b0000; coef21 = 4'b0000; coef22 = 4'b0000;
