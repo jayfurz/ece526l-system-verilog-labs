@@ -1,0 +1,24 @@
+Command: /home/users3/jaf39908/ece_526l/lab8/./simv_inex -l inexhaustive.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 24 01:57 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+At time                10000: data_in=0000 coef11=0000 coef12=0000 coef21=0000 coef22=0000 final_sum=0000000000
+At time                60000: data_in=1111 coef11=1111 coef12=1111 coef21=1111 coef22=1111 final_sum=0000000000
+At time                65000: data_in=1111 coef11=1111 coef12=1111 coef21=1111 coef22=1111 final_sum=0011100001
+At time                75000: data_in=1111 coef11=1111 coef12=1111 coef21=1111 coef22=1111 final_sum=0111000010
+At time                85000: data_in=1111 coef11=1111 coef12=1111 coef21=1111 coef22=1111 final_sum=1010100011
+At time                95000: data_in=1111 coef11=1111 coef12=1111 coef21=1111 coef22=1111 final_sum=1110000100
+At time               100000: data_in=0101 coef11=1010 coef12=0101 coef21=1010 coef22=0101 final_sum=0111000010
+At time               105000: data_in=0101 coef11=1010 coef12=0101 coef21=1010 coef22=0101 final_sum=0101011110
+At time               115000: data_in=0101 coef11=1010 coef12=0101 coef21=1010 coef22=0101 final_sum=0100101100
+At time               125000: data_in=0101 coef11=1010 coef12=0101 coef21=1010 coef22=0101 final_sum=0011001000
+At time               135000: data_in=0101 coef11=1010 coef12=0101 coef21=1010 coef22=0101 final_sum=0010010110
+At time               140000: data_in=1001 coef11=0011 coef12=1100 coef21=1010 coef22=0110 final_sum=0010011011
+At time               145000: data_in=1001 coef11=0011 coef12=1100 coef21=1010 coef22=0110 final_sum=0010100111
+$finish called from file "inexaustive_tb.v", line 72.
+$finish at simulation time               150000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 150000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Mon Apr 24 01:57:58 2023
