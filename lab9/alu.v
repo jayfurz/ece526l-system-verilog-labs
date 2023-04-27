@@ -11,7 +11,8 @@
 
 `timescale 1ns/100ps
 
-module alu (
+module alu #(
+    parameter WIDTH = 8) (
     input CLK, EN, OE,
     input [3:0] OPCODE,
     // this is where the compilation is conditional--whether or not it is going
@@ -19,18 +20,16 @@ module alu (
 //`define SIGNED_OPERANDS
 
 `ifdef SIGNED_OPERANDS
-    input signed [WIDTH-1:0] A, B;
+    input signed [WIDTH-1:0] A, B,
     output reg signed [WIDTH-1:0] ALU_OUT,
 `else
-    input [WIDTH-1:0] A, B;
+    input [WIDTH-1:0] A, B,
     output reg [WIDTH-1:0] ALU_OUT,
 `endif
 
     // CF is carry flag, OF- Overflow, SF-Signflag, ZF-Zeroflag
     output reg CF, OF, SF, ZF
 );
-
-    parameter WIDTH = 8;
 
     // Localparams for opcodes
     localparam ADD_OP  = 4'b0010;
@@ -40,8 +39,13 @@ module alu (
     localparam XOR_OP  = 4'b0110;
     localparam NOTA_OP = 4'b0111;
     
+`ifdef SIGNED_OPERANDS
     reg signed [WIDTH-1:0] result;
-    wire signed [WIDTH:0] add_result;
+    reg signed [WIDTH:0] add_result;
+`else
+    reg [WIDTH-1:0] result;
+    reg [WIDTH:0] add_result;
+`endif
 
     always @(posedge CLK) begin
         if (EN) begin

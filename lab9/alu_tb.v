@@ -33,10 +33,11 @@ module tb_alu;
         #5 clk = ~clk;
     end
 
+
     // Testbench stimulus
     initial begin
         // Monitor statements
-        $monitor("ALU_OUT: %b, CF: %b, OF: %b, SF: %b, ZF: %b", alu_out, cf, of, sf, zf);
+        $monitor("opcode: %b, a: %d, b: %d, ALU_OUT: %d, CF: %b, OF: %b, SF: %b, ZF: %b", opcode, a, b, alu_out, cf, of, sf, zf);
 
         // Initialize signals
         clk = 0;
