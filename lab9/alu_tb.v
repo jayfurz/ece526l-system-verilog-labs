@@ -28,6 +28,22 @@ module tb_alu;
         .ALU_OUT(alu_out), .CF(cf), .OF(of), .SF(sf), .ZF(zf)
     );
 
+    // Opcode name function
+    function [31:0] opcode_name;
+        input [3:0] opcode;
+        begin
+            case (opcode)
+                4'b0010: opcode_name = "ADD    ";
+                4'b0011: opcode_name = "SUB    ";
+                4'b0100: opcode_name = "AND    ";
+                4'b0101: opcode_name = "OR     ";
+                4'b0110: opcode_name = "XOR    ";
+                4'b0111: opcode_name = "NOT A  ";
+                default: opcode_name = "UNKNOWN";
+            endcase
+        end
+    endfunction
+
     // Clock generation
     always begin
         #5 clk = ~clk;
