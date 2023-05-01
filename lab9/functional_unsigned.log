@@ -1,0 +1,21 @@
+Command: /home/users3/jaf39908/ece_526l/lab9/./simv_unsigned -l functional_unsigned.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 30 23:22 2023
+opcode: ADD    , a:  85, b:  60, ALU_OUT:   x, correct answer: 145, CF: x, OF: x, SF: x, ZF: x
+opcode: ADD    , a:  85, b:  60, ALU_OUT: 145, correct answer: 145, CF: 0, OF: 1, SF: 1, ZF: 0
+opcode: SUB    , a: 147, b:  90, ALU_OUT: 145, correct answer:  57, CF: 0, OF: 1, SF: 1, ZF: 0
+opcode: SUB    , a: 147, b:  90, ALU_OUT:  57, correct answer:  57, CF: 0, OF: 1, SF: 0, ZF: 0
+opcode: AND    , a: 204, b: 170, ALU_OUT:  57, correct answer: 136, CF: 0, OF: 1, SF: 0, ZF: 0
+opcode: AND    , a: 204, b: 170, ALU_OUT: 136, correct answer: 136, CF: 0, OF: 1, SF: 1, ZF: 0
+opcode: OR     , a: 240, b:  15, ALU_OUT: 136, correct answer: 255, CF: 0, OF: 1, SF: 1, ZF: 0
+opcode: OR     , a: 240, b:  15, ALU_OUT: 255, correct answer: 255, CF: 0, OF: 1, SF: 1, ZF: 0
+opcode: XOR    , a: 170, b:  85, ALU_OUT: 255, correct answer: 255, CF: 0, OF: 1, SF: 1, ZF: 0
+opcode: NOT A  , a: 240, b:   0, ALU_OUT: 255, correct answer:  15, CF: 0, OF: 1, SF: 1, ZF: 0
+opcode: NOT A  , a: 240, b:   0, ALU_OUT:  15, correct answer:  15, CF: 0, OF: 1, SF: 0, ZF: 0
+$finish called from file "alu_tb.v", line 78.
+$finish at simulation time                  600
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 60000 ps
+CPU Time:      0.200 seconds;       Data structure size:   0.0Mb
+Sun Apr 30 23:22:58 2023

@@ -20,6 +20,7 @@ module tb_alu;
     reg [7:0] a, b;
     wire [7:0] alu_out;
     wire cf, of, sf, zf;
+    reg [7:0] correct_answer;
 
     // Instantiate the ALU module
     alu uut (
@@ -29,7 +30,7 @@ module tb_alu;
     );
 
     // Opcode name function
-    function [31:0] opcode_name;
+    function [55:0] opcode_name;
         input [3:0] opcode;
         begin
             case (opcode)
@@ -44,6 +45,19 @@ module tb_alu;
         end
     endfunction
 
+    function automativ void check_result;
+        input [55:0] opname;
+        input [7:0] alu_out, expected_alu_out;
+        begin
+            if (alu_out === expected_alu_out) begin
+                $display("%0s test passed. Expected: %b, Got: %b", opname, expected_alu_out, alu_out);
+            end else begin
+                $display("%0s test failed. Expected: %b, Got: %b", opnmae, expected_alu_out, alu_out);
+            end
+        end
+    endfunction
+
+
     // Clock generation
     always begin
         #5 clk = ~clk;
@@ -53,7 +67,7 @@ module tb_alu;
     // Testbench stimulus
     initial begin
         // Monitor statements
-        $monitor("opcode: %b, a: %d, b: %d, ALU_OUT: %d, CF: %b, OF: %b, SF: %b, ZF: %b", opcode, a, b, alu_out, cf, of, sf, zf);
+        $monitor("opcode: %0s, a: %d, b: %d, ALU_OUT: %d, correct answer: %d, CF: %b, OF: %b, SF: %b, ZF: %b", opcode_name(opcode), a, b, alu_out, correct_answer, cf, of, sf, zf);
 
         // Initialize signals
         clk = 0;
@@ -64,12 +78,12 @@ module tb_alu;
         b = 8'b0000_0000;
 
         // Basic functionality tests
-        opcode = 4'b0010; a = 8'b0101_0101; b = 8'b0011_1100; #10;  // Test ADD
-        opcode = 4'b0011; a = 8'b1001_0011; b = 8'b0101_1010; #10;  // Test SUB
-        opcode = 4'b0100; a = 8'b1100_1100; b = 8'b1010_1010; #10;  // Test AND
-        opcode = 4'b0101; a = 8'b1111_0000; b = 8'b0000_1111; #10;  // Test OR
-        opcode = 4'b0110; a = 8'b1010_1010; b = 8'b0101_0101; #10;  // Test XOR
-        opcode = 4'b0111; a = 8'b1111_0000; b = 8'b0000_0000; #10;  // Test NOT_A
+        opcode = 4'b0010; a = 8'b0101_0101; b = 8'b0011_1100; correct_answer = a + b; #10;  // Test ADD 
+        opcode = 4'b0011; a = 8'b1001_0011; b = 8'b0101_1010; correct_answer = a - b; #10;  // Test SUB
+        opcode = 4'b0100; a = 8'b1100_1100; b = 8'b1010_1010; correct_answer = a & b; #10;  // Test AND
+        opcode = 4'b0101; a = 8'b1111_0000; b = 8'b0000_1111; correct_answer = a | b; #10;  // Test OR
+        opcode = 4'b0110; a = 8'b1010_1010; b = 8'b0101_0101; correct_answer = a ^ b; #10;  // Test XOR
+        opcode = 4'b0111; a = 8'b1111_0000; b = 8'b0000_0000; correct_answer = ~a; #10;  // Test NOT_A
 
         // Additional test cases can be added here, following the test scenarios and corner cases discussed earlier.
 
