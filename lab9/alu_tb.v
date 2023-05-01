@@ -46,17 +46,17 @@ module tb_alu;
         end
     endfunction
 
-    function automatic void check_result;
+    task check_result;
         input [55:0] opname;
         input [7:0] alu_out, expected_alu_out;
         begin
             if (alu_out === expected_alu_out) begin
                 $display("%0s test passed. Expected: %d, Got: %d", opname, expected_alu_out, alu_out);
             end else begin
-                $display("%0s test failed. Expected: %d, Got: %d", opnmae, expected_alu_out, alu_out);
+                $display("%0s test failed. Expected: %d, Got: %d", opname, expected_alu_out, alu_out);
             end
         end
-    endfunction
+    endtask
 
 
     // Clock generation
@@ -86,7 +86,7 @@ module tb_alu;
         opcode = 4'b0110; a = 8'b1010_1010; b = 8'b0101_0101; correct_answer = a ^ b; #10;  // Test XOR
         opcode = 4'b0111; a = 8'b1111_0000; b = 8'b0000_0000; correct_answer = ~a; #10;  // Test NOT_A
 
-        $endmonitor;
+        $monitoroff;
         // Additional test cases for corner cases discussed earlier.
 
         // Test    // Test NOT A corner case: ~0
