@@ -226,7 +226,27 @@ module tb_alu;
         // the ALU output should remain the same as before (still showing the
         // result of the addition)
         test(4'b0010, a, b, 8'h3A + 8'h22, 0, 0, 0, 0);
->
+
+        // Test with OE = 0 (should set ALU_OUT to high impedance)
+        $display("\nNow testing OE");
+        oe = 0;
+        en = 1;
+        // Choose an operation, e.g., ADD
+        opcode = 4'b0010;
+        a = 8'h3A;
+        b = 8'h22;
+        // Wait for a few clock cycles
+        repeat(5) @(posedge clk);
+        // The ALU_OUT should be high impedance (floating) so we cannot directly check its value
+        // However, we can check if the ALU_OUT is not driven
+        if (alu_out !== 1'bz) begin
+            $display("ERROR: ALU_OUT is not high impedance when OE = 0");
+        end
+        // Enable the output
+        oe = 1;
+        repeat(5) @(posedge clk);
+        // The ALU output should now show the result of the operation
+        test(4'b0010, a, b, 8'h3A + 8'h22, 0, 0, 0, 0);
         // Finish the simulation
         $finish;
     end
