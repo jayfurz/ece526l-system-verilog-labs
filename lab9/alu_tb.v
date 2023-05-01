@@ -10,7 +10,7 @@
 /* This is the testbench module for the ALU                */
 
 `timescale 1ns/100ps
-
+//`define SIGNED_OPERANDS
 module tb_alu;
 
     reg clk;
@@ -55,7 +55,8 @@ module tb_alu;
         end
     endfunction
 
-    task check_result;
+    task test;
+        input [3:0] test_opcode;
         `ifdef SIGNED_OPERANDS
             input signed [7:0] test_a;
             input signed [7:0] test_b;
@@ -65,7 +66,6 @@ module tb_alu;
             input [7:0] test_b;
             input [7:0] expected_alu_out;
         `endif
-        input [3:0] test_opcode;
         input       expected_cf;
         input       expected_of;
         input       expected_sf;
@@ -74,30 +74,32 @@ module tb_alu;
 
         begin
             opcode <= test_opcode;
-            A <= test_a;
-            B <= test_b;
-            #(10ns);
+            a <= test_a;
+            b <= test_b;
+            #10;
 
-            opcode_name(test_opcode, opcode_string);
+            opcode_string = opcode_name(test_opcode);
+            $display("Testing %0s with a = %d, b = %d, output: %d, expected: %d", opcode_string, a, b, alu_out, expected_alu_out);
 
-            if (ALU_OUT !== expected_alu_out) begin
-                $display("Mismatch in ALU_OUT for %s: Expected = %h, Actual = %h", opcode_string, expected_alu_out, ALU_OUT);
+            if (alu_out !== expected_alu_out) begin
+                $display("Mismatch in alu_out for %s: Expected = %h, Actual = %h", opcode_string, expected_alu_out, alu_out);
+            end
+            `ifdef SIGNED_OPERANDS
+                if (of !== expected_of) begin
+                    $display("Mismatch in OF for %s: Expected = %b, Actual = %b", opcode_string, expected_of, of);
+                end
+            `else
+                if (cf !== expected_cf) begin
+                    $display("Mismatch in CF for %s: Expected = %b, Actual = %b", opcode_string, expected_cf, cf);
+                end
+            `endif
+
+            if (sf !== expected_sf) begin
+                $display("Mismatch in SF for %s: Expected = %b, Actual = %b", opcode_string, expected_sf, sf);
             end
 
-            if (CF !== expected_cf) begin
-                $display("Mismatch in CF for %s: Expected = %b, Actual = %b", opcode_string, expected_cf, CF);
-            end
-
-            if (OF !== expected_of) begin
-                $display("Mismatch in OF for %s: Expected = %b, Actual = %b", opcode_string, expected_of, OF);
-            end
-
-            if (SF !== expected_sf) begin
-                $display("Mismatch in SF for %s: Expected = %b, Actual = %b", opcode_string, expected_sf, SF);
-            end
-
-            if (ZF !== expected_zf) begin
-                $display("Mismatch in ZF for %s: Expected = %b, Actual = %b", opcode_string, expected_zf, ZF);
+            if (zf !== expected_zf) begin
+                $display("Mismatch in ZF for %s: Expected = %b, Actual = %b", opcode_string, expected_zf, zf);
             end
         end
     endtask
@@ -107,16 +109,17 @@ module tb_alu;
         #5 clk = ~clk;
     end
 
+    `ifdef SIGNED_OPERANDS
+      initial $display("Signed run");
+    `else
+      initial $display("Unsigned run");
+    `endif
+
 
     // Testbench stimulus
     initial begin
         // Monitor statements
-        $monitor("opcode: %0s, a: %d, b: %d, ALU_OUT: %d, correct answer: %d, CF: %b, OF: %b, SF: %b, ZF: %b", opcode_name(opcode), a, b, alu_out, correct_answer, cf, of, sf, zf);
-        `ifdef SIGNED_OPERANDS
-          initial $display("Signed run");
-        `else
-          initial $display("Unsigned run");
-        `endif
+        $monitor("opcode: %0s, a: %d, b: %d, alu_out: %d, correct answer: %d, cf: %b, of: %b, sf: %b, zf: %b", opcode_name(opcode), a, b, alu_out, correct_answer, cf, of, sf, zf);
         // Initialize signals
         clk = 0;
         en = 1;
@@ -135,25 +138,26 @@ module tb_alu;
 
         $monitoroff;
         // Additional test cases for corner cases discussed earlier.
+        $display("\nNow testing corner cases");
 
         // Corner cases for ADD
         `ifdef SIGNED_OPERANDS
-            // Signed mode
+            // Signed mode (opcode, a, b, out, cf, of, sf, zf
             test(4'b0010, 8'sh7F, 8'sh7F, 8'shFE, 0, 1, 1, 0); // Maximum positive value + Maximum positive value
-            test(4'b0010, 8'sh80, 8'sh80, 8'sh00, 0, 0, 0, 1); // Maximum negative value + Maximum negative value
+            test(4'b0010, 8'sh80, 8'sh80, 8'sh00, 0, 1, 0, 1); // Maximum negative value + Maximum negative value
         `else
             // Unsigned mode
             test(4'b0010, 8'h00, 8'h00, 8'h00, 0, 0, 0, 1); // A = 0, B = 0
             test(4'b0010, 8'hFF, 8'h00, 8'hFF, 0, 0, 1, 0); // A = maximum value, B = 0
             test(4'b0010, 8'h00, 8'hFF, 8'hFF, 0, 0, 1, 0); // A = 0, B = maximum value
-            test(4'b0010, 8'hFF, 8'hFF, 8'hFE, 1, 0, 1, 0); // A = maximum value, B = maximum value
+            test(4'b0010, 8'hFF, 8'hFF, 8'hFE, 1, 1, 1, 0); // A = maximum value, B = maximum value
         `endif
 
         // Corner cases for SUB
         `ifdef SIGNED_OPERANDS
             // Signed mode
             test(4'b0011, 8'sh7F, 8'sh80, 8'shFF, 0, 1, 1, 0); // Maximum positive value - Maximum negative value
-            test(4'b0011, 8'sh80, 8'sh7F, 8'sh01, 1, 0, 0, 0); // Maximum negative value - Maximum positive value
+            test(4'b0011, 8'sh80, 8'sh7F, 8'sh01, 1, 1, 0, 0); // Maximum negative value - Maximum positive value
         `else
             // Unsigned mode
             test(4'b0011, 8'h00, 8'h00, 8'h00, 0, 0, 0, 1); // A = 0, B = 0
@@ -190,7 +194,7 @@ module tb_alu;
         `ifdef SIGNED_OPERANDS
             // Signed mode
             test(4'b0111, 8'sh00, 8'sh00, 8'shFF, 0, 0, 1, 0); // A = 0
-            test(4'b0111, 8'sh7F, 8'sh00, 8'sh80, 0, 1, 0, 0); // A = maximum positive value
+            test(4'b0111, 8'sh7F, 8'sh00, 8'sh80, 0, 0, 1, 0); // A = maximum positive value
             test(4'b0111, 8'sh80, 8'sh00, 8'sh7F, 0, 0, 0, 0); // A = maximum negative value
         `else
             // Unsigned mode
@@ -198,6 +202,31 @@ module tb_alu;
             test(4'b0111, 8'hFF, 8'h00, 8'h00, 0, 0, 0, 1); // A = maximum value
         `endif
 
+        // Test with EN = 0 (should maintain the previous state)
+        $display("\nNow testing EN");
+        en = 0;
+        // choose operation ADD
+        opcode = 4'b0010;
+        a = 8'h3A;
+        b = 8'h22;
+        // Wait for a few clock cycles
+        repeat(5) @(posedge clk);
+        // Enable the ALU
+        en = 1;
+        repeat(5) @(posedge clk);
+        // The ALU output should remain the same as before
+        test(opcode, a, b, 8'h3A + 8'h22, 0, 0, 0, 0);
+        en = 0;
+        // Perform another operation (subtract)
+        opcode = 4'b0011;
+        a = 8'h3A;
+        b = 8'h22;
+        // Wait for a few clock cycles
+        repeat(5) @(posedge clk);
+        // the ALU output should remain the same as before (still showing the
+        // result of the addition)
+        test(4'b0010, a, b, 8'h3A + 8'h22, 0, 0, 0, 0);
+>
         // Finish the simulation
         $finish;
     end

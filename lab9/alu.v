@@ -64,10 +64,26 @@ module alu #(
                     OF = (A[WIDTH-1] != B[WIDTH-1]) && (A[WIDTH-1] != result[WIDTH-1]);
                 end
                 
-                AND_OP: result = A & B;
-                OR_OP: result = A | B;
-                XOR_OP: result = A ^ B;
-                NOTA_OP: result = ~A;
+                AND_OP: begin
+                    result = A & B;
+                    CF = 0;
+                    OF = 0;
+                end
+                OR_OP: begin
+                    result = A | B;
+                    CF = 0;
+                    OF = 0;
+                end
+                XOR_OP: begin
+                    result = A ^ B;
+                    CF = 0;
+                    OF = 0;
+                end
+                NOTA_OP: begin
+                    result = ~A;
+                    CF = 0;
+                    OF = 0;
+                end
                 default: ; // Ignore other opcodes
             endcase
             
