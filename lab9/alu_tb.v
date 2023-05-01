@@ -10,7 +10,7 @@
 /* This is the testbench module for the ALU                */
 
 `timescale 1ns/100ps
-//`define SIGNED_OPERANDS
+`define SIGNED_OPERANDS
 module tb_alu;
 
     reg clk;
@@ -239,8 +239,8 @@ module tb_alu;
         repeat(5) @(posedge clk);
         // The ALU_OUT should be high impedance (floating) so we cannot directly check its value
         // However, we can check if the ALU_OUT is not driven
-        if (alu_out !== 1'bz) begin
-            $display("ERROR: ALU_OUT is not high impedance when OE = 0");
+        if (alu_out !== {8{1'bz}}) begin
+            $display("ERROR: ALU_OUT is not high impedance when OE = 0, alu_out = %b", alu_out);
         end
         // Enable the output
         oe = 1;
