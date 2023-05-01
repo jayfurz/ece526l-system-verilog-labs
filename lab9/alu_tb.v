@@ -17,11 +17,20 @@ module tb_alu;
     reg en;
     reg oe;
     reg [3:0] opcode;
-    reg [7:0] a, b;
-    wire [7:0] alu_out;
+
+    `ifdef SIGNED_OPERANDS
+        reg signed [7:0] a, b;
+        wire signed [7:0] alu_out;
+        reg signed [7:0] correct_answer;
+    `else
+        reg [7:0] a, b;
+        wire [7:0] alu_out;
+        reg [7:0] correct_answer;
+    `endif
+
     wire cf, of, sf, zf;
-    reg [7:0] correct_answer;
     reg [55:0] opcode_str;
+
 
     // Instantiate the ALU module
     alu uut (
@@ -31,7 +40,7 @@ module tb_alu;
     );
 
     // Opcode name function
-    function [55:0] opcode_name;
+    function [7*8-1:0] opcode_name;
         input [3:0] opcode;
         begin
             case (opcode)
@@ -47,17 +56,51 @@ module tb_alu;
     endfunction
 
     task check_result;
-        input [55:0] opname;
-        input [7:0] alu_out, expected_alu_out;
+        `ifdef SIGNED_OPERANDS
+            input signed [7:0] test_a;
+            input signed [7:0] test_b;
+            input signed [7:0] expected_alu_out;
+        `else
+            input [7:0] test_a;
+            input [7:0] test_b;
+            input [7:0] expected_alu_out;
+        `endif
+        input [3:0] test_opcode;
+        input       expected_cf;
+        input       expected_of;
+        input       expected_sf;
+        input       expected_zf;
+        reg [7*8-1:0] opcode_string;
+
         begin
-            if (alu_out === expected_alu_out) begin
-                $display("%0s test passed. Expected: %d, Got: %d", opname, expected_alu_out, alu_out);
-            end else begin
-                $display("%0s test failed. Expected: %d, Got: %d", opname, expected_alu_out, alu_out);
+            opcode <= test_opcode;
+            A <= test_a;
+            B <= test_b;
+            #(10ns);
+
+            opcode_name(test_opcode, opcode_string);
+
+            if (ALU_OUT !== expected_alu_out) begin
+                $display("Mismatch in ALU_OUT for %s: Expected = %h, Actual = %h", opcode_string, expected_alu_out, ALU_OUT);
+            end
+
+            if (CF !== expected_cf) begin
+                $display("Mismatch in CF for %s: Expected = %b, Actual = %b", opcode_string, expected_cf, CF);
+            end
+
+            if (OF !== expected_of) begin
+                $display("Mismatch in OF for %s: Expected = %b, Actual = %b", opcode_string, expected_of, OF);
+            end
+
+            if (SF !== expected_sf) begin
+                $display("Mismatch in SF for %s: Expected = %b, Actual = %b", opcode_string, expected_sf, SF);
+            end
+
+            if (ZF !== expected_zf) begin
+                $display("Mismatch in ZF for %s: Expected = %b, Actual = %b", opcode_string, expected_zf, ZF);
             end
         end
     endtask
-
 
     // Clock generation
     always begin
@@ -69,7 +112,11 @@ module tb_alu;
     initial begin
         // Monitor statements
         $monitor("opcode: %0s, a: %d, b: %d, ALU_OUT: %d, correct answer: %d, CF: %b, OF: %b, SF: %b, ZF: %b", opcode_name(opcode), a, b, alu_out, correct_answer, cf, of, sf, zf);
-
+        `ifdef SIGNED_OPERANDS
+          initial $display("Signed run");
+        `else
+          initial $display("Unsigned run");
+        `endif
         // Initialize signals
         clk = 0;
         en = 1;
@@ -89,61 +136,67 @@ module tb_alu;
         $monitoroff;
         // Additional test cases for corner cases discussed earlier.
 
-        // Test    // Test NOT A corner case: ~0
-        opcode = 4'b0111;
-        a = 8'b0000_0000;
-        b = 8'b0000_0000;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b1111_1111);
+        // Corner cases for ADD
+        `ifdef SIGNED_OPERANDS
+            // Signed mode
+            test(4'b0010, 8'sh7F, 8'sh7F, 8'shFE, 0, 1, 1, 0); // Maximum positive value + Maximum positive value
+            test(4'b0010, 8'sh80, 8'sh80, 8'sh00, 0, 0, 0, 1); // Maximum negative value + Maximum negative value
+        `else
+            // Unsigned mode
+            test(4'b0010, 8'h00, 8'h00, 8'h00, 0, 0, 0, 1); // A = 0, B = 0
+            test(4'b0010, 8'hFF, 8'h00, 8'hFF, 0, 0, 1, 0); // A = maximum value, B = 0
+            test(4'b0010, 8'h00, 8'hFF, 8'hFF, 0, 0, 1, 0); // A = 0, B = maximum value
+            test(4'b0010, 8'hFF, 8'hFF, 8'hFE, 1, 0, 1, 0); // A = maximum value, B = maximum value
+        `endif
 
-        // Test ADD edge case: Maximum unsigned addition (255 + 255)
-        opcode = 4'b0010;
-        a = 8'b1111_1111;
-        b = 8'b1111_1111;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b1111_1110); // 254, with CF = 1
+        // Corner cases for SUB
+        `ifdef SIGNED_OPERANDS
+            // Signed mode
+            test(4'b0011, 8'sh7F, 8'sh80, 8'shFF, 0, 1, 1, 0); // Maximum positive value - Maximum negative value
+            test(4'b0011, 8'sh80, 8'sh7F, 8'sh01, 1, 0, 0, 0); // Maximum negative value - Maximum positive value
+        `else
+            // Unsigned mode
+            test(4'b0011, 8'h00, 8'h00, 8'h00, 0, 0, 0, 1); // A = 0, B = 0
+            test(4'b0011, 8'hFF, 8'h00, 8'hFF, 0, 0, 1, 0); // A = maximum value, B = 0
+            test(4'b0011, 8'h00, 8'hFF, 8'h01, 1, 0, 0, 0); // A = 0, B = maximum value
+            test(4'b0011, 8'hFF, 8'hFF, 8'h00, 0, 0, 0, 1); // A = maximum value, B = maximum value
+        `endif
 
-        // Test SUB edge case: Maximum positive difference (255 - 0)
-        opcode = 4'b0011;
-        a = 8'b1111_1111;
-        b = 8'b0000_0000;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b1111_1111);
+        // Corner cases for AND, OR, XOR
+        `ifdef SIGNED_OPERANDS
+            // Signed mode
+            test(4'b0100, 8'sh7F, 8'sh80, 8'sh00, 0, 0, 0, 1); // Maximum positive value AND Maximum negative value
+            test(4'b0101, 8'sh7F, 8'sh80, 8'shFF, 0, 0, 1, 0); // Maximum positive value OR Maximum negative value
+            test(4'b0110, 8'sh7F, 8'sh80, 8'shFF, 0, 0, 1, 0); // Maximum positive value XOR Maximum negative value
+        `else
+            // Unsigned mode
+            test(4'b0100, 8'h00, 8'h00, 8'h00, 0, 0, 0, 1); // A = 0, B = 0 (AND)>>
+            test(4'b0100, 8'hFF, 8'h00, 8'h00, 0, 0, 0, 1); // A = maximum value, B = 0 (AND)
+            test(4'b0100, 8'h00, 8'hFF, 8'h00, 0, 0, 0, 1); // A = 0, B = maximum value (AND)
+            test(4'b0100, 8'hFF, 8'hFF, 8'hFF, 0, 0, 1, 0); // A = maximum value, B = maximum value (AND)
 
-        // Test SUB edge case: Maximum negative difference (0 - 255)
-        opcode = 4'b0011;
-        a = 8'b0000_0000;
-        b = 8'b1111_1111;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b0000_0001); // 1, with CF = 1
+            test(4'b0101, 8'h00, 8'h00, 8'h00, 0, 0, 0, 1); // A = 0, B = 0 (OR)
+            test(4'b0101, 8'hFF, 8'h00, 8'hFF, 0, 0, 1, 0); // A = maximum value, B = 0 (OR)
+            test(4'b0101, 8'h00, 8'hFF, 8'hFF, 0, 0, 1, 0); // A = 0, B = maximum value (OR)
+            test(4'b0101, 8'hFF, 8'hFF, 8'hFF, 0, 0, 1, 0); // A = maximum value, B = maximum value (OR)
 
-        // Test AND edge case: AND with all 1s
-        opcode = 4'b0100;
-        a = 8'b1111_1111;
-        b = 8'b1111_1111;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b1111_1111);
+            test(4'b0110, 8'h00, 8'h00, 8'h00, 0, 0, 0, 1); // A = 0, B = 0 (XOR)
+            test(4'b0110, 8'hFF, 8'h00, 8'hFF, 0, 0, 1, 0); // A = maximum value, B = 0 (XOR)
+            test(4'b0110, 8'h00, 8'hFF, 8'hFF, 0, 0, 1, 0); // A = 0, B = maximum value (XOR)
+            test(4'b0110, 8'hFF, 8'hFF, 8'h00, 0, 0, 0, 1); // A = maximum value, B = maximum value (XOR)
+        `endif
 
-        // Test OR edge case: OR with all 0s
-        opcode = 4'b0101;
-        a = 8'b0000_0000;
-        b = 8'b0000_0000;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b0000_0000);
-
-        // Test XOR edge case: XOR with inverse values
-        opcode = 4'b0110;
-        a = 8'b1010_1010;
-        b = 8'b0101_0101;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b1111_1111);
-
-        // Test XOR edge case: XOR with the same values
-        opcode = 4'b0110;
-        a = 8'b1010_1010;
-        b = 8'b1010_1010;
-        #10; opcode_str = opcode_name(opcode);
-        check_result(opcode_str, alu_out, 8'b0000_0000);
+        // Corner cases for NOT_A
+        `ifdef SIGNED_OPERANDS
+            // Signed mode
+            test(4'b0111, 8'sh00, 8'sh00, 8'shFF, 0, 0, 1, 0); // A = 0
+            test(4'b0111, 8'sh7F, 8'sh00, 8'sh80, 0, 1, 0, 0); // A = maximum positive value
+            test(4'b0111, 8'sh80, 8'sh00, 8'sh7F, 0, 0, 0, 0); // A = maximum negative value
+        `else
+            // Unsigned mode
+            test(4'b0111, 8'h00, 8'h00, 8'hFF, 0, 0, 1, 0); // A = 0
+            test(4'b0111, 8'hFF, 8'h00, 8'h00, 0, 0, 0, 1); // A = maximum value
+        `endif
 
         // Finish the simulation
         $finish;
