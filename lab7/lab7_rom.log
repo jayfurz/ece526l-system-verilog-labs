@@ -1,0 +1,87 @@
+Command: /home/users3/jaf39908/ece_526l/lab7/./simv_rom -l lab7_rom.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 19 20:49 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+Memory Initialization Test: PASSED at address 0, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 1, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 2, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 3, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 4, expected: 58, got: 58
+Memory Initialization Test: PASSED at address 5, expected: ed, got: ed
+Memory Initialization Test: PASSED at address 6, expected: b7, got: b7
+Memory Initialization Test: PASSED at address 7, expected: 34, got: 34
+Memory Initialization Test: PASSED at address 8, expected: c9, got: c9
+Memory Initialization Test: PASSED at address 9, expected: 8f, got: 8f
+Memory Initialization Test: PASSED at address a, expected: a0, got: a0
+Memory Initialization Test: PASSED at address b, expected: 9b, got: 9b
+Memory Initialization Test: PASSED at address c, expected: 65, got: 65
+Memory Initialization Test: PASSED at address d, expected: 11, got: 11
+Memory Initialization Test: PASSED at address e, expected: 3, got: 3
+Memory Initialization Test: PASSED at address f, expected: 4c, got: 4c
+Memory Initialization Test: PASSED at address 10, expected: da, got: da
+Memory Initialization Test: PASSED at address 11, expected: 7e, got: 7e
+Memory Initialization Test: PASSED at address 12, expected: f2, got: f2
+Memory Initialization Test: PASSED at address 13, expected: 26, got: 26
+Memory Initialization Test: PASSED at address 14, expected: 86, got: 86
+Memory Initialization Test: PASSED at address 15, expected: 95, got: 95
+Memory Initialization Test: PASSED at address 16, expected: fd, got: fd
+Memory Initialization Test: PASSED at address 17, expected: b1, got: b1
+Memory Initialization Test: PASSED at address 18, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 19, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 1a, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 1b, expected: xx, got: xx
+Memory Initialization Test: PASSED at address 1c, expected: 12, got: 12
+Memory Initialization Test: PASSED at address 1d, expected: af, got: af
+Memory Initialization Test: PASSED at address 1e, expected: 33, got: 33
+Memory Initialization Test: PASSED at address 1f, expected: xx, got: xx
+Unspecified Locations Test: PASSED at address 18, expected: xx, got: xx
+Unspecified Locations Test: PASSED at address 19, expected: xx, got: xx
+Unspecified Locations Test: PASSED at address 1a, expected: xx, got: xx
+Unspecified Locations Test: PASSED at address 1b, expected: xx, got: xx
+Memory Scrambling Test: PASSED at address 10, expected: 73, got: 73
+Memory Scrambling Test: PASSED at address 11, expected: 3f, got: 3f
+Memory Scrambling Test: PASSED at address 12, expected: 75, got: 75
+Memory Scrambling Test: PASSED at address 13, expected: 2c, got: 2c
+Memory Scrambling Test: PASSED at address 14, expected: 68, got: 68
+Memory Scrambling Test: PASSED at address 15, expected: c9, got: c9
+Memory Scrambling Test: PASSED at address 16, expected: df, got: df
+Memory Scrambling Test: PASSED at address 17, expected: c5, got: c5
+Memory Contents at address 0: xx
+Memory Contents at address 1: xx
+Memory Contents at address 2: xx
+Memory Contents at address 3: xx
+Memory Contents at address 4: 58
+Memory Contents at address 5: ed
+Memory Contents at address 6: b7
+Memory Contents at address 7: 34
+Memory Contents at address 8: c9
+Memory Contents at address 9: 8f
+Memory Contents at address a: a0
+Memory Contents at address b: 9b
+Memory Contents at address c: 65
+Memory Contents at address d: 11
+Memory Contents at address e: 3
+Memory Contents at address f: 4c
+Memory Contents at address 10: 73
+Memory Contents at address 11: 3f
+Memory Contents at address 12: 75
+Memory Contents at address 13: 2c
+Memory Contents at address 14: 68
+Memory Contents at address 15: c9
+Memory Contents at address 16: df
+Memory Contents at address 17: c5
+Memory Contents at address 18: xx
+Memory Contents at address 19: xx
+Memory Contents at address 1a: xx
+Memory Contents at address 1b: xx
+Memory Contents at address 1c: 12
+Memory Contents at address 1d: af
+Memory Contents at address 1e: 33
+Memory Contents at address 1f: xx
+$finish called from file "rom_tb.v", line 53.
+$finish at simulation time               920000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 920000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Wed Apr 19 20:49:08 2023

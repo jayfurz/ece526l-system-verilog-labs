@@ -1,0 +1,57 @@
+Command: /home/users3/jaf39908/ece_526l/lab8/./simv_ex -l noerror.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 24 01:57 2023
+At time                50000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 1 final_sum=   0 non_hierarchical_sum=   0
+At time                90000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 2 final_sum=   0 non_hierarchical_sum=   0
+At time               130000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 3 final_sum=   0 non_hierarchical_sum=   0
+At time               170000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 4 final_sum=   0 non_hierarchical_sum=   0
+At time               210000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 5 final_sum=   0 non_hierarchical_sum=   0
+At time               250000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 6 final_sum=   0 non_hierarchical_sum=   0
+At time               290000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 7 final_sum=   0 non_hierarchical_sum=   0
+At time               330000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 8 final_sum=   0 non_hierarchical_sum=   0
+At time               370000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 9 final_sum=   0 non_hierarchical_sum=   0
+At time               410000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=10 final_sum=   0 non_hierarchical_sum=   0
+At time               450000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=11 final_sum=   0 non_hierarchical_sum=   0
+At time               490000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=12 final_sum=   0 non_hierarchical_sum=   0
+At time               530000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=13 final_sum=   0 non_hierarchical_sum=   0
+At time               570000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=14 final_sum=   0 non_hierarchical_sum=   0
+At time               610000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=15 final_sum=   0 non_hierarchical_sum=   0
+At time               650000: data_in= 0 coef11= 0 coef12= 0 coef21= 1 coef22= 0 final_sum=   0 non_hierarchical_sum=   0
+At time          41942450000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 1 final_sum= 690 non_hierarchical_sum= 675
+At time          41942455000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 1 final_sum= 690 non_hierarchical_sum= 690
+At time          41942490000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 2 final_sum= 705 non_hierarchical_sum= 690
+At time          41942495000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 2 final_sum= 705 non_hierarchical_sum= 705
+At time          41942530000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 3 final_sum= 720 non_hierarchical_sum= 705
+At time          41942535000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 3 final_sum= 720 non_hierarchical_sum= 720
+At time          41942570000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 4 final_sum= 735 non_hierarchical_sum= 720
+At time          41942575000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 4 final_sum= 735 non_hierarchical_sum= 735
+At time          41942610000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 5 final_sum= 750 non_hierarchical_sum= 735
+At time          41942615000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 5 final_sum= 750 non_hierarchical_sum= 750
+At time          41942650000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 6 final_sum= 765 non_hierarchical_sum= 750
+At time          41942655000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 6 final_sum= 765 non_hierarchical_sum= 765
+At time          41942690000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 7 final_sum= 780 non_hierarchical_sum= 765
+At time          41942695000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 7 final_sum= 780 non_hierarchical_sum= 780
+At time          41942730000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 8 final_sum= 795 non_hierarchical_sum= 780
+At time          41942735000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 8 final_sum= 795 non_hierarchical_sum= 795
+At time          41942770000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 9 final_sum= 810 non_hierarchical_sum= 795
+At time          41942775000: data_in=15 coef11=15 coef12=15 coef21=15 coef22= 9 final_sum= 810 non_hierarchical_sum= 810
+At time          41942810000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=10 final_sum= 825 non_hierarchical_sum= 810
+At time          41942815000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=10 final_sum= 825 non_hierarchical_sum= 825
+At time          41942850000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=11 final_sum= 840 non_hierarchical_sum= 825
+At time          41942855000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=11 final_sum= 840 non_hierarchical_sum= 840
+At time          41942890000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=12 final_sum= 855 non_hierarchical_sum= 840
+At time          41942895000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=12 final_sum= 855 non_hierarchical_sum= 855
+At time          41942930000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=13 final_sum= 870 non_hierarchical_sum= 855
+At time          41942935000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=13 final_sum= 870 non_hierarchical_sum= 870
+At time          41942970000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=14 final_sum= 885 non_hierarchical_sum= 870
+At time          41942975000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=14 final_sum= 885 non_hierarchical_sum= 885
+At time          41943010000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 900 non_hierarchical_sum= 885
+At time          41943015000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 900 non_hierarchical_sum= 900
+All test vectors passed!
+$finish called from file "exhaustive_tb.v", line 112.
+$finish at simulation time          41943050000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 41943050000 ps
+CPU Time:      1.000 seconds;       Data structure size:   0.0Mb
+Mon Apr 24 01:57:20 2023

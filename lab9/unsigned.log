@@ -1,0 +1,53 @@
+Command: /home/users3/jaf39908/ece_526l/lab9/./simv_unsigned -l unsigned.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  May  1 01:23 2023
+Unsigned run
+opcode: ADD    , a:  85, b:  60, alu_out:   x, correct answer: 145, cf: x, of: x, sf: x, zf: x
+opcode: ADD    , a:  85, b:  60, alu_out: 145, correct answer: 145, cf: 0, of: 1, sf: 1, zf: 0
+opcode: SUB    , a: 147, b:  90, alu_out: 145, correct answer:  57, cf: 0, of: 1, sf: 1, zf: 0
+opcode: SUB    , a: 147, b:  90, alu_out:  57, correct answer:  57, cf: 0, of: 1, sf: 0, zf: 0
+opcode: AND    , a: 204, b: 170, alu_out:  57, correct answer: 136, cf: 0, of: 1, sf: 0, zf: 0
+opcode: AND    , a: 204, b: 170, alu_out: 136, correct answer: 136, cf: 0, of: 0, sf: 1, zf: 0
+opcode: OR     , a: 240, b:  15, alu_out: 136, correct answer: 255, cf: 0, of: 0, sf: 1, zf: 0
+opcode: OR     , a: 240, b:  15, alu_out: 255, correct answer: 255, cf: 0, of: 0, sf: 1, zf: 0
+opcode: XOR    , a: 170, b:  85, alu_out: 255, correct answer: 255, cf: 0, of: 0, sf: 1, zf: 0
+opcode: NOT A  , a: 240, b:   0, alu_out: 255, correct answer:  15, cf: 0, of: 0, sf: 1, zf: 0
+opcode: NOT A  , a: 240, b:   0, alu_out:  15, correct answer:  15, cf: 0, of: 0, sf: 0, zf: 0
+
+Now testing corner cases
+Testing ADD     with a =   0, b =   0, output:   0, expected:   0
+Testing ADD     with a = 255, b =   0, output: 255, expected: 255
+Testing ADD     with a =   0, b = 255, output: 255, expected: 255
+Testing ADD     with a = 255, b = 255, output: 254, expected: 254
+Testing SUB     with a =   0, b =   0, output:   0, expected:   0
+Testing SUB     with a = 255, b =   0, output: 255, expected: 255
+Testing SUB     with a =   0, b = 255, output:   1, expected:   1
+Testing SUB     with a = 255, b = 255, output:   0, expected:   0
+Testing AND     with a =   0, b =   0, output:   0, expected:   0
+Testing AND     with a = 255, b =   0, output:   0, expected:   0
+Testing AND     with a =   0, b = 255, output:   0, expected:   0
+Testing AND     with a = 255, b = 255, output: 255, expected: 255
+Testing OR      with a =   0, b =   0, output:   0, expected:   0
+Testing OR      with a = 255, b =   0, output: 255, expected: 255
+Testing OR      with a =   0, b = 255, output: 255, expected: 255
+Testing OR      with a = 255, b = 255, output: 255, expected: 255
+Testing XOR     with a =   0, b =   0, output:   0, expected:   0
+Testing XOR     with a = 255, b =   0, output: 255, expected: 255
+Testing XOR     with a =   0, b = 255, output: 255, expected: 255
+Testing XOR     with a = 255, b = 255, output:   0, expected:   0
+Testing NOT A   with a =   0, b =   0, output: 255, expected: 255
+Testing NOT A   with a = 255, b =   0, output:   0, expected:   0
+
+Now testing EN
+Testing ADD     with a =  58, b =  34, output:  92, expected:  92
+Testing ADD     with a =  58, b =  34, output:  92, expected:  92
+
+Now testing OE
+Testing ADD     with a =  58, b =  34, output:  92, expected:  92
+$finish called from file "alu_tb.v", line 251.
+$finish at simulation time                 5350
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 535000 ps
+CPU Time:      0.210 seconds;       Data structure size:   0.0Mb
+Mon May  1 01:23:37 2023

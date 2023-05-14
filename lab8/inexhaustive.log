@@ -1,0 +1,24 @@
+Command: /home/users3/jaf39908/ece_526l/lab8/./simv_inex -l inexhaustive.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 24 02:01 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+At time                10000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 0 final_sum=   0
+At time                60000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=15 final_sum=   0
+At time                65000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 225
+At time                75000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 450
+At time                85000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 675
+At time                95000: data_in=15 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 900
+At time               100000: data_in= 5 coef11=10 coef12= 5 coef21=10 coef22= 5 final_sum= 450
+At time               105000: data_in= 5 coef11=10 coef12= 5 coef21=10 coef22= 5 final_sum= 350
+At time               115000: data_in= 5 coef11=10 coef12= 5 coef21=10 coef22= 5 final_sum= 300
+At time               125000: data_in= 5 coef11=10 coef12= 5 coef21=10 coef22= 5 final_sum= 200
+At time               135000: data_in= 5 coef11=10 coef12= 5 coef21=10 coef22= 5 final_sum= 150
+At time               140000: data_in= 9 coef11= 3 coef12=12 coef21=10 coef22= 6 final_sum= 155
+At time               145000: data_in= 9 coef11= 3 coef12=12 coef21=10 coef22= 6 final_sum= 167
+$finish called from file "inexaustive_tb.v", line 72.
+$finish at simulation time               150000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 150000 ps
+CPU Time:      0.250 seconds;       Data structure size:   0.0Mb
+Mon Apr 24 02:01:02 2023

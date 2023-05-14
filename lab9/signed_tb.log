@@ -1,0 +1,32 @@
+Command: /home/users3/jaf39908/ece_526l/lab9/./simv_signed -l signed_tb.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  May  1 01:02 2023
+Signed run
+opcode: ADD    , a:          85, b:          60, alu_out:           x, correct answer:        -111, cf: x, of: x, sf: x, zf: x
+opcode: ADD    , a:          85, b:          60, alu_out:        -111, correct answer:        -111, cf: 0, of: 1, sf: 1, zf: 0
+opcode: SUB    , a:        -109, b:          90, alu_out:        -111, correct answer:          57, cf: 0, of: 1, sf: 1, zf: 0
+opcode: SUB    , a:        -109, b:          90, alu_out:          57, correct answer:          57, cf: 0, of: 1, sf: 0, zf: 0
+opcode: AND    , a:         -52, b:         -86, alu_out:          57, correct answer:        -120, cf: 0, of: 1, sf: 0, zf: 0
+opcode: AND    , a:         -52, b:         -86, alu_out:        -120, correct answer:        -120, cf: 0, of: 0, sf: 1, zf: 0
+opcode: OR     , a:         -16, b:          15, alu_out:        -120, correct answer:          -1, cf: 0, of: 0, sf: 1, zf: 0
+opcode: OR     , a:         -16, b:          15, alu_out:          -1, correct answer:          -1, cf: 0, of: 0, sf: 1, zf: 0
+opcode: XOR    , a:         -86, b:          85, alu_out:          -1, correct answer:          -1, cf: 0, of: 0, sf: 1, zf: 0
+opcode: NOT A  , a:         -16, b:           0, alu_out:          -1, correct answer:          15, cf: 0, of: 0, sf: 1, zf: 0
+opcode: NOT A  , a:         -16, b:           0, alu_out:          15, correct answer:          15, cf: 0, of: 0, sf: 0, zf: 0
+Testing ADD     with a =         127, b =         127, output:          -2, expected:          -2
+Testing ADD     with a =        -128, b =        -128, output:           0, expected:           0
+Testing SUB     with a =         127, b =        -128, output:          -1, expected:          -1
+Testing SUB     with a =        -128, b =         127, output:           1, expected:           1
+Testing AND     with a =         127, b =        -128, output:           0, expected:           0
+Testing OR      with a =         127, b =        -128, output:          -1, expected:          -1
+Testing XOR     with a =         127, b =        -128, output:          -1, expected:          -1
+Testing NOT A   with a =           0, b =           0, output:          -1, expected:          -1
+Testing NOT A   with a =         127, b =           0, output:        -128, expected:        -128
+Testing NOT A   with a =        -128, b =           0, output:         127, expected:         127
+$finish called from file "alu_tb.v", line 205.
+$finish at simulation time                 1600
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 160000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Mon May  1 01:02:07 2023

@@ -1,0 +1,44 @@
+Command: /home/users3/jaf39908/ece_526l/lab8/./simv_exerr -l errorforced.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 24 01:55 2023
+Forcing error at simulation time 1920
+At time                50000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 1 final_sum=   0 non_hierarchical_sum=   0
+At time                90000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 2 final_sum=   0 non_hierarchical_sum=   0
+At time               130000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 3 final_sum=   0 non_hierarchical_sum=   0
+At time               170000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 4 final_sum=   0 non_hierarchical_sum=   0
+At time               210000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 5 final_sum=   0 non_hierarchical_sum=   0
+At time               250000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 6 final_sum=   0 non_hierarchical_sum=   0
+At time               290000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 7 final_sum=   0 non_hierarchical_sum=   0
+At time               330000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 8 final_sum=   0 non_hierarchical_sum=   0
+At time               370000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22= 9 final_sum=   0 non_hierarchical_sum=   0
+At time               410000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=10 final_sum=   0 non_hierarchical_sum=   0
+At time               450000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=11 final_sum=   0 non_hierarchical_sum=   0
+At time               490000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=12 final_sum=   0 non_hierarchical_sum=   0
+At time               530000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=13 final_sum=   0 non_hierarchical_sum=   0
+At time               570000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=14 final_sum=   0 non_hierarchical_sum=   0
+At time               610000: data_in= 0 coef11= 0 coef12= 0 coef21= 0 coef22=15 final_sum=   0 non_hierarchical_sum=   0
+At time               650000: data_in= 0 coef11= 0 coef12= 0 coef21= 1 coef22= 0 final_sum=   0 non_hierarchical_sum=   0
+At time          31457000000: data_in=11 coef11=15 coef12=15 coef21=15 coef22= 8 final_sum= 583 non_hierarchical_sum= 583
+At time          31457010000: data_in=11 coef11=15 coef12=15 coef21=15 coef22= 9 final_sum= 594 non_hierarchical_sum= 583
+At time          31457015000: data_in=11 coef11=15 coef12=15 coef21=15 coef22= 9 final_sum= 594 non_hierarchical_sum= 594
+At time          31457050000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=10 final_sum= 605 non_hierarchical_sum= 594
+At time          31457055000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=10 final_sum= 605 non_hierarchical_sum= 605
+At time          31457090000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=11 final_sum= 616 non_hierarchical_sum= 605
+At time          31457095000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=11 final_sum= 616 non_hierarchical_sum= 616
+At time          31457130000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=12 final_sum= 627 non_hierarchical_sum= 616
+At time          31457135000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=12 final_sum= 627 non_hierarchical_sum= 627
+At time          31457170000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=13 final_sum= 638 non_hierarchical_sum= 627
+At time          31457175000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=13 final_sum= 638 non_hierarchical_sum= 638
+At time          31457210000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=14 final_sum= 649 non_hierarchical_sum= 638
+At time          31457215000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=14 final_sum= 649 non_hierarchical_sum= 649
+At time          31457250000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 660 non_hierarchical_sum= 649
+At time          31457255000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=15 final_sum= 660 non_hierarchical_sum= 660
+At time          31457280000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=15 final_sum=   1 non_hierarchical_sum= 660
+Error at time          31457290000: data_in=11 coef11=15 coef12=15 coef21=15 coef22=15 final_sum=   1 expected_sum= 660
+$finish called from file "exhaustive_tb.v", line 107.
+$finish at simulation time          31457290000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 31457290000 ps
+CPU Time:      0.790 seconds;       Data structure size:   0.0Mb
+Mon Apr 24 01:55:21 2023

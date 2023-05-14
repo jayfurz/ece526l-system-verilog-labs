@@ -1,0 +1,23 @@
+Command: /home/users3/jaf39908/ece_526l/lab7/./simv -l lab7.log
+Chronologic VCS simulator copyright 1991-2017
+Contains Synopsys proprietary information.
+Compiler version N-2017.12-SP2-9_Full64; Runtime version N-2017.12-SP2-9_Full64;  Apr 18 09:51 2023
+VCD+ Writer N-2017.12-SP2-9_Full64 Copyright (c) 1991-2017 by Synopsys Inc.
+Test A: PASSED
+Test B: PASSED
+Test C: PASSED
+Test D: PASSED
+Test E: PASSED
+               Test F: FAILED at address 1, expected: 10, got: 1
+             Test F: FAILED at address 2, expected: 100, got: 10
+            Test F: FAILED at address 3, expected: 1000, got: 11
+          Test F: FAILED at address 4, expected: 10000, got: 100
+         Test F: FAILED at address 5, expected: 100000, got: 101
+        Test F: FAILED at address 6, expected: 1000000, got: 110
+       Test F: FAILED at address 7, expected: 10000000, got: 111
+$finish called from file "./register_file_tb.v", line 148.
+$finish at simulation time              3630000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3630000 ps
+CPU Time:      0.250 seconds;       Data structure size:   0.0Mb
+Tue Apr 18 09:51:25 2023
